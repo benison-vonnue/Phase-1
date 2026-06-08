@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio & Video with Accessibility</title>
+  </head>
+  <body>
+    <main>
+      <h1>Audio & Video with Accessibility</h1>
+      <div>
+        <video
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          controls
+          width="640"
+          poster="https://picsum.photos/640/352"
+        >
+          <p>
+            Your browser doesn't support HTML video. Here is a
+            <a href="https://www.w3schools.com/html/mov_bbb.mp4"
+              >link to the video</a
+            >
+            instead.
+          </p>
+          <track
+            kind="captions"
+            src="captions.vtt"
+            srclang="en"
+            label="English"
+          />
+        </video>
+      </div>
+      <div>
+        <audio controls>
+        <source src="viper.mp3" type="audio/mp3" />
+        <source src="viper.ogg" type="audio/ogg" />
+            Your browser doesn't support Audio
+      </audio>
+      <details>
+        <summary>Audio Desciption</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolorum voluptatem perspiciatis soluta officia! Eius explicabo temporibus libero culpa aliquid nesciunt aspernatur beatae facere, consequuntur modi excepturi voluptas quo aliquam.</p>
+      </details>
+      </div>
+    </main>
+  </body>
+</html>
