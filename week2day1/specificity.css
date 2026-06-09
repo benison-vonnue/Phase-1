@@ -1,0 +1,70 @@
+/* 1, 0, 1, 0, 0 */
+#heading{
+    background-color: magenta !important;
+}
+
+/* 1, 0, 0, 1, 2 */
+main h1:first-child{
+    background-color: mediumseagreen !important;
+}
+
+/* 1, 0, 0, 1, 0 */
+.bg-red{
+    background-color: greenyellow !important;
+}
+
+/* 1, 0, 0, 1, 0 */
+.bg-gray{
+    background-color: gray !important;
+}
+
+/* 1, 0, 0, 0, 2 */
+main h1{
+    background-color: maroon !important;
+}
+
+/* 1, 0, 0, 0, 1 */
+h1{
+    background-color: salmon !important; 
+}
+
+
+
+/* 1, 0, 0 */
+#heading{
+    background-color: green;
+}
+
+/* 0, 1, 2 */
+main h1:first-child{
+    background-color: pink;
+}
+
+
+/* 0, 1, 0 */
+.bg-red{
+    background-color: red;
+}
+
+/* 0, 1, 0 */
+.bg-gray{
+    background-color: gray;
+}
+
+/* 0, 0, 2 */
+ main h1{
+    background-color: blue;
+}
+/* 0, 0, 2 */
+main > h1{
+    background-color: blueviolet;
+}
+    
+/*Same Precedence as Previous so one that come last wins */
+
+
+/* 0, 0, 1 */
+h1{
+    background-color: aqua;
+}
+
