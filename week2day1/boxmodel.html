@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+  </head>
+  <body style="margin: 0px; padding: 0px">
+    <div
+      style="
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        background-color: red;
+        color: white;
+      "
+    >
+      border: 1px solid black; margin: 10px; padding: 10px; background-color:
+      color: white; red;
+    </div>
+    <div
+      style="
+        border: 2px dotted black;
+        margin: 20px;
+        padding: 20px;
+        background-color: green;
+        color: white;
+      "
+    >
+      border: 2px dotted black; margin: 20px; padding: 20px; background-color:
+      color: white; green;
+    </div>
+    <div
+      style="
+        border: 3x solid black;
+        margin: 30px;
+        padding: 30px;
+        background-color: yellow;
+        color: white;
+      "
+    >
+      border: 3x solid black; margin: 30px; padding: 30px; background-color:
+      color: white; yellow;
+    </div>
+    <div
+      style="
+        border: 4px double black;
+        margin: 40px;
+        padding: 40px;
+        background-color: blue;
+        color: white;
+      "
+    >
+      border: 4px double black; margin: 40px; padding: 40px; background-color:
+      blue; color: white;
+    </div>
+    <div
+      style="
+        border: 5px solid black;
+        margin: 40px;
+        padding: 10px;
+        background-color: olive;
+      "
+    >
+      border: 5px solid black; margin: 40px; padding: 10px; background-color:
+      olive;
+    </div>
+    <div
+      style="
+        border: 5px solid black;
+        margin: 0px;
+        padding: 40px;
+        background-color: gray;
+        color: white;
+      "
+    >
+      border: 5px solid black; margin: 0px; padding: 40px; background-color:
+      gray; color: white;
+    </div>
+    <div
+      style="
+        border: 5px solid black;
+        margin: -20px;
+        padding: 30px;
+        background-color: maroon;
+        color: white;
+      "
+    >
+      border: 5px solid black; margin: -20px; padding: 30px; background-color:
+      maroon; color: white;
+    </div>
+    <div
+      style="
+        border: 5px solid black;
+        margin: 30px;
+        padding: 20px;
+        background-color: darkgreen;
+        color: white;
+      "
+    >
+      border: 5px solid black; margin: 30px; padding: 20px; background-color:
+      darkgreen; color: white;
+    </div>
+
+    <h2>Content Box vs Border Box</h2>
+    <h3>Content Box</h3>
+    <div
+      style="
+        width: 300px;
+        border: 5px solid black;
+        box-sizing: content-box;
+        margin: 10px;
+        padding: 10px;
+        border: 20px solid rgb(212, 67, 67);
+      "
+    >
+      <div style="background-color: brown; color: white">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        autem exercitationem facilis minima veritatis, quaerat distinctio
+        voluptates explicabo numquam eius harum a animi eligendi laborum, ipsum
+        aspernatur tempore earum quia!
+      </div>
+    </div>
+    <h3>Border Box</h3>
+    <div
+      style="
+        width: 300px;
+        border: 5px solid black;
+        box-sizing: border-box;
+        margin: 10px;
+        padding: 10px;
+        border: 20px solid rgb(212, 67, 67);
+      "
+    >
+      <div style="background-color: brown; color: white">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        autem exercitationem facilis minima veritatis, quaerat distinctio
+        voluptates explicabo numquam eius harum a animi eligendi laborum, ipsum
+        aspernatur tempore earum quia!
+      </div>
+    </div>
+  </body>
+</html>
