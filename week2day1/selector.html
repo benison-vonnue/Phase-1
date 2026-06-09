@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+  </head>
+  <style>
+    .list-class:nth-child(2n){
+        color: cyan;
+    }
+    input[type="email"]{
+        color: red;
+    }
+    .card, .featured{
+        color: yellow;
+    }
+    article p:first-child{
+        color: violet;
+    }
+    h2 + p{
+        color: brown;
+    }
+    .psuedo:hover{
+        color: red;
+    }
+    .psuedo:focus{
+        color: blue;
+    }
+    .psuedo p:first-child{
+        color: green;
+    }
+    .psuedo p:last-child{
+        color: maroon;  
+    }
+    .test li:nth-child(3n+1){
+        color: magenta;
+    }
+    .test2::before{
+        content: "This is Before";
+        background-color: yellow;
+        margin-right: 100px;
+    }
+    .test2::after{
+        content: "This is After";
+        background-color: black;
+        color: white;
+        margin-left: 100px;
+    }
+    a[href^="https"]:hover{
+        color: red;
+    }
+  </style>
+  <body>
+    <main>
+      <h1>Selectors</h1>
+      <div>
+        <ul class="test">
+          <li class="list-class">UL List 1</li>
+          <li class="list-class">UL List 2</li>
+          <li class="list-class">UL List 3</li>
+          <li class="list-class">UL List 4</li>
+          <li class="list-class">UL List 5</li>
+          <li class="list-class">UL List 6</li>
+        </ul>
+
+        <form action="/">
+          <div>
+            <label for="email-input1">Email Input 1</label>
+            <input type="email" name="email-input1" id="email-input1" />
+          </div>
+          <div>
+            <label for="email-input1">Email Input 2</label>
+            <input type="email" name="email-input2" id="email-input1" />
+          </div>
+          <div>
+            <label for="email-input1">Email Input 3</label>
+            <input type="email" name="email-input3" id="email-input1" />
+          </div>
+          <div>
+            <label for="email-input1">Email Input 4</label>
+            <input type="email" name="email-input4" id="email-input1" />
+          </div>
+        </form>
+        <p class="card">This is a card class P Tag</p>
+        <p class="featured">This is a featured Class P Tag</p>
+      </div>
+      <article>
+        <p>This is a p tag inside article</p>
+        <p>This is a second p tag inside article</p>
+      </article>
+      <article>
+        <h2>
+            This is a Heading level 2
+        </h2>
+        <p>
+            This is a p tag preceded by Heading Level 2
+        </p>
+      </article>
+      <section class="psuedo">
+        <p>This element has first child psuedo class</p>
+        <p>All element has focus psuedo class</p>
+        <p>All element has hover psuedo class</p>
+        <p>This element has 3nth+1 psuedo class</p>
+        <p>This element has last child psuedo class</p>
+      </section>
+      <p class="test2">P element with before and after tag</p>
+      <a href="https://google.com">Https Link</a>
+      <a href="base.html">Internal Link</a>
+    </main>
+  </body>
+</html>
