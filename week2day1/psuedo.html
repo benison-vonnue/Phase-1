@@ -1,0 +1,120 @@
+<!-- ​Task 7 (55 min) - Pseudo-Classes & Pseudo-Elements​
+​160.​
+​Create pseudo.html and build a navigation bar using :hover and :focus-visible (not :focus) for​
+​interactive states - add a comment explaining the difference​
+​161.​ ​Build a custom styled checkbox: hide the default input[type=checkbox] with appearance: none,​
+​recreate a checkmark using ::before on a label that is displayed when :checked​
+​162.​ ​Build a numbered list using CSS counters: counter-reset on the ol, counter-increment on li, and​
+​content: counter() in a ::before pseudo-element​
+​163.​ ​Build a pure CSS tooltip: position::after as absolute, toggle it visible with :hover on the parent.​
+​The tooltip text comes from a data-tooltip attribute using attr()​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Classes & Pseudo-Elements</title>
+    <style>
+      .hover:hover {
+        color: red;
+      }
+      .focus-visible:focus-visible {
+        color: chocolate;
+      }
+      .focus:focus {
+        color: magenta;
+      }
+      .text-black {
+        color: black;
+      }
+      .none {
+        text-decoration: none;
+      }
+      input[type="checkbox"] {
+        appearance: none;
+      }
+
+      label::before {
+        width: 10px;
+        height: 10px;
+        border: black 2px solid;
+        display: inline-block;
+        content: "";
+        margin-right: 4px;
+      }
+       
+      input[type="checkbox"]:checked + label::before{
+        content: "*"
+      }
+
+      .add-counter {
+        counter-increment: num;
+      }
+      .add-counter::before {
+        content: counter(num);
+      }
+      .tooltip {
+        position: relative;
+      }
+      .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: 170px;
+        top: 20px;
+        opacity: 0%;
+      }
+      .tooltip:hover::after {
+        opacity: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Difference Between Focus and Focus Visible it that focus - works based on keyboard and mouse, focus-visible do not work with mouse it is more for screen readers and keyboards-->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="" class="hover focus-visible text-black none"
+              >Home - Focus visible</a
+            >
+          </li>
+          <li>
+            <a href="" class="hover focus-visible text-black none"
+              >About - Focus visible</a
+            >
+          </li>
+          <li>
+            <a href="" class="hover focus text-black none">Contact - Focus</a>
+          </li>
+          <li>
+            <a href="" class="hover focus text-black none">Jobs - Focus</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Pseudo-Classes & Pseudo-Elements</h1>
+      <section>
+        <div>
+          <input type="checkbox" name="checkbox" id="checkbox" />
+           <label for="checkbox">Checkbox</label>
+        </div>
+      </section>
+      <section>
+        <ol style="counter-reset: num">
+          <li class="add-counter"></li>
+          <li class="add-counter"></li>
+          <li class="add-counter"></li>
+          <li class="add-counter"></li>
+        </ol>
+      </section>
+      <section>
+        <p class="tooltip" data-tooltip="This is a tooltip">
+          Hover over to see a tooltip
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
