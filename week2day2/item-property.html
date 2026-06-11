@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Every Item Property</title>
+  </head>
+  <style>
+    *,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .flex {
+      display: flex;
+    }
+    .card {
+      width: 10vw;
+      height: 10vw;
+      border: red 1px solid;
+    }
+    .card-0 {
+      width: 10vw;
+      height: 10vw;
+      border: red 1px solid;
+    }
+    .card-w-30 {
+      width: 30vw;
+      height: 10vw;
+      border: red 1px solid;
+    }
+    .border-blue {
+      border: blue 1px solid;
+    }
+    .mb-1 {
+      margin-bottom: 1em;
+    }
+    .w-100 {
+      width: 100vw;
+    }
+    .h-50 {
+      height: 50vh;
+    }
+    .p-1 {
+      padding: 1em;
+    }
+    .gap-1 {
+      gap: 1em;
+    }
+    .center {
+      justify-content: center;
+      align-items: center;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .item-end {
+      align-self: flex-end;
+    }
+  </style>
+  <body>
+    <main>
+      <section class="p-1">
+        <h2 class="mb-1">Flex Grow</h2>
+        <div class="flex p-1 gap-1 border-blue mb-1">
+          <div class="card" style="flex-grow: 0"></div>
+          <div class="card" style="flex-grow: 1"></div>
+          <div class="card" style="flex-grow: 2"></div>
+          <div class="card" style="flex-grow: 1"></div>
+          <div class="card" style="flex-grow: 0"></div>
+        </div>
+      </section>
+      <section class="p-1">
+        <h2 class="mb-1">Flex Shrink</h2>
+        <div class="flex p-1 gap-1 border-blue mb-1">
+          <!-- flex-shrink is zero so it will shrink -->
+          <div class="card-w-30" style="flex-shrink: 0"></div>
+          <div class="card-w-30" style="flex-shrink: 1"></div>
+          <!-- flex-shrink is highest so it will shrink most -->
+          <div class="card-w-30" style="flex-shrink: 2"></div>
+          <div class="card-w-30" style="flex-shrink: 1"></div>
+          <div class="card-w-30" style="flex-shrink: 0"></div>
+        </div>
+      </section>
+      <section class="p-1">
+        <!-- flex basis overriddes width property inside flex containers, auto take values of given width,  -->
+        <h2 class="mb-1">Flex Basis</h2>
+        <div class="flex p-1 gap-1 border-blue mb-1">
+          <div class="card-0" style="flex-basis: 0"></div>
+          <div class="card-0" style="flex-basis: auto"></div>
+
+          <div class="card-0" style="flex-basis: 200px"></div>
+          <div class="card-0" style="flex-basis: 33.33%"></div>
+        </div>
+      </section>
+      <section class="p-1">
+        <h2 class="mb-1">Flex Order</h2>
+        <div class="flex p-1 gap-1 border-blue mb-1">
+          <div class="card flex center" style="order: 2">1</div>
+          <div class="card flex center" style="order: 4">2</div>
+          <div class="card flex center" style="order: 3">3</div>
+          <div class="card flex center" style="order: 5">4</div>
+          <div class="card flex center" style="order: 1">5</div>
+        </div>
+      </section>
+      <section class="p-1">
+        <h2 class="mb-1">Flex Order</h2>
+        <div class="flex p-1 gap-1 border-blue mb-1 h-50 items-center">
+          <div class="card flex center">1</div>
+          <div class="card flex center">2</div>
+          <div class="card flex center item-end">3</div>
+          <div class="card flex center">4</div>
+          <div class="card flex center">5</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
