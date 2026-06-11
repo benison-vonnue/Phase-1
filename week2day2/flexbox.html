@@ -1,0 +1,388 @@
+<!-- ​Task 1 (35 min) - Every Container Property​
+​168.​ Create flexbox.html with a nine-item flex container. Demonstrate every justify-content value with​
+​eight items: flex-start, flex-end, center, space-between, space-around, space-evenly​
+​169.​ ​Demonstrate every align-items value: stretch, flex-start, flex-end, center, baseline - make​
+​baseline visible by giving items different font sizes
+​​170. ​​Demonstrate align-content on a wrapped container with fifteen items (requires flex-wrap: wrap):​
+​flex-start, flex-end, center, space-between, space-around, stretch​
+​171.​ ​Demonstrate flex-direction: row, row-reverse, column, column-reverse on separate containers​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Every Container Property</title>
+    <style>
+      *,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .flex {
+        display: flex;
+      }
+      .card {
+        width: 10vw;
+        height: 10vw;
+        border: red 1px solid;
+      }
+      .sq-15 {
+        width: 15vw;
+        height: 15vw;
+      }
+      .sq-12 {
+        width: 12vw;
+        height: 12vw;
+      }
+      .sq-33vw {
+        width: 32vw;
+        height: 32vw;
+      }
+      .wrap {
+        flex-wrap: wrap;
+      }
+      .space-evenly {
+        justify-content: space-evenly;
+      }
+      .border-blue {
+        border: blue 2px solid;
+      }
+      .content-start {
+        align-content: flex-start;
+      }
+      .content-end {
+        align-content: flex-end;
+      }
+      .content-center {
+        align-content: center;
+      }
+      .content-between {
+        align-content: space-between;
+      }
+      .content-around {
+        align-content: space-around;
+      }
+      .content-evenly {
+        align-content: space-evenly;
+      }
+      .h-50vw {
+        height: 50vw;
+      }
+      .mb-1 {
+        margin-bottom: 1em;
+      }
+      .flex-row{
+        flex-direction: row;
+      }
+      .flex-row-reverse{
+        flex-direction: row-reverse;
+      }
+      .flex-col{
+        flex-direction: column;
+      }
+      .flex-col-reverse{
+        flex-direction: column-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Flex - Justify Content</h2>
+        <div class="flex wrap space-evenly">
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: flex-start"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Flex Start</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: flex-end"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Flex End</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: center"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Center</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: space-between"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Space Between</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: space-around"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Space Around</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="justify-content: space-evenly"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Space Evenly</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Flex - Align Items</h2>
+        <div class="flex wrap space-evenly">
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="align-items: stretch"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Stretch</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="align-items: flex-start"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Flex Start</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="align-items: flex-end"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Flex End</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="align-items: center"
+          >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div style="position: absolute">Center</div>
+          </div>
+          <div
+            class="flex sq-33vw border-blue mb-1"
+            style="align-items: baseline"
+          >
+            <div class="card"></div>
+            <div class="card sq-15"></div>
+            <div class="card sq-12"></div>
+            <div style="position: absolute">Baseline</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Flex - Align Content</h2>
+        <div class="border-blue flex wrap mb-1 content-start h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex Start</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 content-end h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex End</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 content-center h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Center</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 content-between h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Space Between</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 content-around h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Space Around</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 content-evenly h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Space Evenly</div>
+        </div>
+      </section>
+            <section>
+        <h2>Flex - Direction</h2>
+        <div class="border-blue flex wrap mb-1 flex-row h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex Row</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 flex-row-reverse h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex Row Reverse</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 flex-col h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex Column</div>
+        </div>
+        <div class="border-blue flex wrap mb-1 flex-col-reverse h-50vw">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div style="position: absolute">Flex Column Reverse</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
