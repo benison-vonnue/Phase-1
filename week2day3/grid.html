@@ -1,0 +1,151 @@
+<!-- ​Task 1 (40 min) - Grid Sizing Methods - All Seven​
+​202.​​Create grid.html with seven grid containers, each demonstrating a different column sizing​
+​method: fixed px, percentage %, fr units, auto, minmax(200px, 1fr), repeat(3, 1fr), and​
+repeat(auto-fill, minmax(200px, 1fr))​
+​203.​ ​Show the fr unit with different ratios (1fr 2fr 1fr) and verify the proportions in DevTools​
+​204.​ ​Demonstrate the implicit grid: add more children than your explicit tracks. Use grid-auto-rows:​
+​minmax(100px, auto) to size overflow rows.​
+​205.​ ​Show column-gap, row-gap, and the gap shorthand​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Sizing Methods - All Seven</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid {
+        display: grid;
+      }
+      .property-1 {
+        grid-template-columns: 200px 200px 200px 200px;
+        gap: 1em;
+      }
+      .property-2 {
+        grid-template-columns: 20% 20% 20% 20%;
+        gap: 1em;
+      }
+      .property-3 {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 1em;
+      }
+      .property-4 {
+        grid-template-columns: auto;
+        gap: 1em;
+      }
+      .property-5 {
+        grid-template-columns:
+          minmax(200px, 1fr) minmax(200px, 2fr) minmax(200px, 1fr)
+          minmax(200px, 1fr); /* Responsive */
+        gap: 1em;
+      }
+      .property-6 {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+      }
+      .property-7 {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1em;
+      }
+      .property-8 {
+        grid-auto-rows: minmax(100px, auto);
+        row-gap: 2em;
+      }
+      .m-2 {
+        margin: 2em;
+      }
+      .h-500 {
+        height: 500px;
+      }
+      .border-red {
+        border: red 1px solid;
+      }
+      .w-90 {
+        width: 90vw;
+      }
+      .m-1 {
+        margin: 0.4em;
+      }
+      .p-1 {
+        padding: 0.4em;
+      }
+      .cell {
+        width: 200px;
+        height: 200px;
+      }
+      .border-green {
+        border: green 1px solid;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .relative {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Grid Sizing Methods - All Seven</h1>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-1 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">1. 200px each column</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-2 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">2. 20% each column</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-3 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">3. 1fr 2fr 1fr Property</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-4 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">4. Auto</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-5 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">
+          5. minmax(200px, 1fr) minmax(200px, 2fr) minmax(200px, 1fr)
+          minmax(200px, 1fr)
+        </h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-6 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">6. repeat(3, 1fr), column-gap - 1em</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-7 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">7. repeat(auto-fill, minmax(200px, 1fr))</h2>
+      </div>
+      <div class="grid border-red w-90 h-500 m-2 p-1 property-8 relative">
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <div class="border-green"></div>
+        <h2 class="absolute">auto grid-auto-rows, row-gap - 2em</h2>
+      </div>
+    </main>
+  </body>
+</html>
