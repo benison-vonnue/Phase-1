@@ -1,0 +1,135 @@
+<!-- ​Task 6 (55 min) - CSS Grid Calendar​
+​223.​ ​Build a month calendar using CSS Grid: seven equal columns (Mon–Sun). Rows auto-generate​
+​for each week.​
+​224.​ ​Place the first day of the month using grid-column based on its day of the week. Subsequent​
+​days flow naturally.​
+​225.​ ​Mark some dates as events (different background colour). Mark today's date with a circle using​
+​::before​
+​226.​ ​Add a narrow Week column at the start: make the main grid 8 columns, add a header and week​
+​number in column 1, push day columns to 2–8​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Calendar</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f0f0f0;
+        font-family: "Sora";
+      }
+      .flex {
+        display: flex;
+      }
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+      .h-100 {
+        min-height: 100vh;
+      }
+      .grid {
+        display: grid;
+      }
+      .property {
+        grid-template-columns: repeat(8, 1fr);
+      }
+      .gap-1 {
+        gap: 1em;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .present {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .present::before {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid black;
+        content: "";
+        position: absolute;
+      }
+      .start {
+        grid-column: 3 / auto;
+      }
+      .mt-2 {
+        margin-top: 2em;
+      }
+      @media (max-width: 480px) {
+        .headings {
+          display: none;
+        }
+        .property {
+          grid-template-columns: repeat(
+            auto-fill,
+            minmax(max(250px, 100% / 1), 1fr)
+          );
+        }
+        .start {
+          grid-column: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flex center h-100 mt-2">
+      <div class="grid property gap-1 center text-center">
+        <div class="headings">Week</div>
+        <div class="headings">Sunday</div>
+        <div class="headings">Monday</div>
+        <div class="headings">Tuesday</div>
+        <div class="headings">Wednesday</div>
+        <div class="headings">Thursday</div>
+        <div class="headings">Friday</div>
+        <div class="headings">Saturday</div>
+        <div class="headings">Week 1</div>
+        <div class="start" style="color: gray">1</div>
+        <div style="color: gray">2</div>
+        <div style="color: gray">3</div>
+        <div style="color: gray">4</div>
+        <div style="color: gray">5</div>
+        <div style="color: gray">6</div>
+        <div class="headings">Week 2</div>
+        <div style="color: blue">7</div>
+        <div style="color: gray">8</div>
+        <div style="color: gray">9</div>
+        <div style="color: gray">10</div>
+        <div style="color: gray">11</div>
+        <div style="color: gray">12</div>
+        <div style="color: gray">13</div>
+        <div class="headings">Week 3</div>
+        <div style="color: gray" class="present">14</div>
+        <div style="color: gray">15</div>
+        <div style="color: gray">16</div>
+        <div style="color: gray">17</div>
+        <div style="color: gray">18</div>
+        <div style="color: blue">19</div>
+        <div style="color: gray">20</div>
+        <div class="headings">Week 4</div>
+        <div style="color: gray">21</div>
+        <div style="color: gray">22</div>
+        <div style="color: gray">23</div>
+        <div style="color: blue">24</div>
+        <div style="color: gray">25</div>
+        <div style="color: gray">26</div>
+        <div style="color: gray">27</div>
+        <div class="headings">Week 5</div>
+        <div style="color: gray">28</div>
+        <div style="color: gray">29</div>
+        <div style="color: gray">30</div>
+        <div style="color: gray">31</div>
+      </div>
+    </main>
+  </body>
+</html>
