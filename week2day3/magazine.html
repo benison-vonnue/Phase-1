@@ -1,0 +1,76 @@
+<!-- ​Task 3 (45 min) - Named Grid Areas - Magazine Layout​
+​211.​ Create a full magazine layout using grid-template-areas with at least a 4-column, 5-row grid.​
+Define areas: header, nav, hero, article1, article2, sidebar, ad, footer​
+212. ​​Place every section using grid-area: header; etc.​
+​213.​ ​Write a media query at 900px that redefines the areas to a two-column layout​
+​214. Write a media query at 600px that redefines to a single column with sections in reading order​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Named Grid Areas - Magazine Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        text-align: center;
+      }
+      .grid {
+        display: grid;
+      }
+      .property {
+        grid-template-areas:
+          "header hero hero nav"
+          "article1 article1 article1 sidebar"
+          "ad ad ad sidebar"
+          "article2 article2 article2 sidebar"
+          "footer footer footer footer";
+        gap: 1em;
+      }
+      @media (max-width: 900px) {
+        .property {
+          grid-template-areas:
+            "header nav"
+            "hero hero"
+            "article1 sidebar"
+            "ad sidebar"
+            "article2 sidebar"
+            "footer footer";
+        }
+      }
+      @media (max-width: 600px) {
+        .property {
+          grid-template-areas: "header" "nav" "hero" "sidebar" "article1" "ad" "article2" "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid property">
+        <section style="grid-area: header"><h2>Header</h2></section>
+        <section style="grid-area: nav"><h2>Hamburger</h2></section>
+        <section style="grid-area: hero"><h2>Hero</h2></section>
+        <section style="grid-area: article1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+          voluptates debitis recusandae eos nihil sed, illo perferendis quas
+          dignissimos molestiae. Numquam corporis sunt recusandae quos
+          repudiandae dolorem, hic iure. Nisi!
+        </section>
+        <section style="grid-area: ad"><h2>Advertisement</h2></section>
+        <section style="grid-area: article2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laudantium
+          molestiae repellat fugiat illum in provident officiis architecto et
+          eligendi, consectetur temporibus exercitationem ipsa quasi vero. Quo
+          eveniet voluptatum modi?
+        </section>
+        <section style="grid-area: sidebar"><h2>sidebar</h2></section>
+        <section style="grid-area: footer"><h2>Footer</h2></section>
+      </div>
+    </main>
+  </body>
+</html>
