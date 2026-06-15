@@ -1,0 +1,103 @@
+<!-- ​Task 2 (40 min) - Line-Based Placement & Spanning​ ​
+206.​ ​Create a 4×4 explicit grid and place eight items manually using grid-column-start/end and​
+​grid-row-start/end​ 
+​207.​ ​Use the shorthand: grid-column: 1 / 3 and grid-row: 2 / 4 on separate items​ ​ 
+208. Use the span keyword: grid-column: span 2 on three items spanning different numbers​
+​209.​ ​​Use negative line numbers: grid-column: 1 / -1 to make an item span the full row​
+​210.​ ​Demonstrate dense packing: grid-auto-flow: dense - show how it fills gaps
+compared to the​ ​default​ 
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line-Based Placement & Spanning</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid {
+        display: grid;
+      }
+      .m-2 {
+        margin: 2em;
+      }
+      .p-2 {
+        padding: 1%;
+      }
+      .property-1 {
+        grid-template-columns: 24.75% 24.75% 24.75% 24.75%;
+        grid-template-rows: 25% 25% 25% 25%;
+      }
+      .border-red {
+        border: red 1px solid;
+      }
+      .border-green {
+        border: green 1px solid;
+      }
+      .gap {
+        gap: 1em;
+      }
+      .h-content {
+        height: fit-content;
+      }
+      .border-box {
+        box-sizing: border-box;
+      }
+      .col-start-2 {
+        grid-column-start: 2;
+      }
+      .col-end-4 {
+        grid-column-end: span 2;
+      }
+      .row-start-3 {
+        grid-row-start: 3;
+      }
+      .row-end-5 {
+        grid-row-end: 5;
+      }
+      .shorthand-col {
+        grid-column: 2 / span 2;
+      }
+      .shorthand-row {
+        grid-row: 1 / span 2;
+      }
+      .negative {
+        grid-column: 1/-1;
+      }
+      .col-start-3 {
+        grid-column-start: 3;
+      }
+      .dense {
+        grid-auto-flow: dense;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid property-1 border-red m-2 p-2 gap h-content border-box">
+        <div class="border-green col-start-2">1</div>
+        <div class="border-green col-start-3 shorthand-row">2</div>
+        <div class="border-green shorthand-col">3</div>
+        <!--shorthand-col SAME AS  col-start-2 col-end-4 -->
+        <div class="border-green row-start-3">4</div>
+        <div class="border-green row-end-5">5</div>
+        <div class="border-green">6</div>
+        <div class="border-green">7</div>
+        <div class="border-green">8</div>
+      </div>
+      <div
+        class="grid property-1 border-red m-2 p-2 gap h-content border-box dense"
+      >
+        <div class="border-green negative">1</div>
+        <div class="border-green">2</div>
+        <div class="border-green">3</div>
+        <div class="border-green col-start-2">4</div>
+        <div class="border-green">5</div>
+      </div>
+    </main>
+  </body>
+</html>
