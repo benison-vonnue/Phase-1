@@ -1,0 +1,250 @@
+<!-- ​Task 5 (50 min) - Admin Dashboard Layout​
+​219.​Build a complete admin dashboard: full-width top header bar, left sidebar (fixed 240px), right​
+​ main area divided into: a stats row (four equal cards using Grid), a large chart placeholder, and two​ smaller panels side by side​
+​220.​ ​Use named areas for the overall structure. Use nested grids for the stats row.​
+​221.​The sidebar collapses to 60px icon-only width below 1024px. Full layout stacks to single​
+​column below 768px.​
+​222.​ ​Apply your colour system custom properties​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard Layout</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap");
+      :root {
+        --text-primary: #102838;
+        --text-muted: #325266;
+        --surface: #fff;
+        --border: #d5dee8;
+        --canvas-start: #e4f3fa;
+        --canvas-mid: #f6fbff;
+        --canvas-end: #fff4e8;
+        --font-body: "Manrope", "Segoe UI", sans-serif;
+        --font-heading: "Sora", "Segoe UI", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+      body {
+        min-height: 100vh;
+        font-family: var(--font-body);
+        color: var(--text-primary);
+        background:
+          radial-gradient(circle at 12% 16%, #0284c72e, transparent 34%),
+          radial-gradient(circle at 82% 10%, #f9731633, transparent 36%),
+          linear-gradient(
+            170deg,
+            var(--canvas-start),
+            var(--canvas-mid) 56%,
+            var(--canvas-end)
+          );
+      }
+      main {
+        max-width: 1360px;
+        margin: 0 auto;
+      }
+      .mt-1 {
+        margin-top: 0.3em;
+      }
+      .mt-2 {
+        margin-top: 2em;
+      }
+      .mb-2 {
+        margin-bottom: 2em;
+      }
+      .header {
+        padding: 2em;
+        background: linear-gradient(
+          135deg,
+          #083344 0%,
+          #0e7490 55%,
+          #f97316 100%
+        );
+        color: #f8fafc;
+        border-radius: 25px;
+      }
+      .sidebar > ul > .mobile {
+        display: none;
+      }
+      .sidebar {
+        background-color: var(--surface);
+        height: fit-content;
+        padding: 1em 0.5em;
+        box-sizing: border-box;
+        border: var(--border) 1px solid;
+        border-radius: 15px;
+      }
+      .grid {
+        display: grid;
+      }
+      .row-1 {
+        grid-template-rows: 1fr;
+      }
+      .gap-1 {
+        gap: 1em;
+      }
+      .p-1 {
+        padding: 0.5em;
+      }
+      .active {
+        background-color: #0f766e;
+        color: #fff;
+      }
+      .rounded-md {
+        border-radius: 12px;
+      }
+      .property-dashboard {
+        grid-template-columns: 240px 1fr;
+        grid-template-areas:
+          "header header"
+          "sidebar main";
+        gap: 2em;
+      }
+      .property-main {
+        grid-template-columns: 100%;
+        grid-area: main;
+        gap: 2em;
+        box-sizing: border-box;
+        height: 100%;
+      }
+      .property-stat {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+      }
+      .property-stat div {
+        padding: 1em 0.5em;
+        background-color: var(--surface);
+        border: var(--border) 1px solid;
+        border-radius: 12px;
+        height: 100px;
+      }
+      .property-chart,
+      .property-panel div {
+        padding: 1em 0.5em;
+        background-color: var(--surface);
+        border: var(--border) 1px solid;
+        border-radius: 12px;
+        height: 100px;
+      }
+      .property-panel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+      }
+      @media (max-width: 1024px) {
+        .property-dashboard {
+          grid-template-columns: 60px 1fr;
+        }
+        .sidebar > ul > .desktop {
+          display: none;
+        }
+        .sidebar > ul > .mobile {
+          display: block;
+        }
+      }
+      @media (max-width: 768px) {
+        .property-stat,
+        .property-panel {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid property-dashboard mt-2">
+        <div style="grid-column: 1/-1" class="header">
+          <p
+            style="
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              font-size: x-small;
+            "
+          >
+            Vonnue Training Program
+          </p>
+          <h1 style="font-family: var(--font-heading)" class="mt-1">
+            Trainee Analytics Dashboard
+          </h1>
+          <p class="mt-1" style="font-size: medium">Training June 26</p>
+        </div>
+        <div style="grid-area: sidebar" class="sidebar">
+          <ul class="grid row-1 gap-1">
+            <li class="grid desktop">
+              <a
+                href=""
+                class="p-1 active rounded-md"
+                style="text-align: center"
+                >Dashboard View</a
+              >
+            </li>
+            <li class="grid desktop">
+              <a href="" class="p-1" style="text-align: center"
+                >Team Performance</a
+              >
+            </li>
+            <li class="grid mobile">
+              <a
+                href=""
+                class="p-1 active rounded-md"
+                style="text-align: center"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-display"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145"
+                  /></svg
+              ></a>
+            </li>
+            <li class="grid mobile">
+              <a href="" class="p-1" style="text-align: center"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-microsoft-teams"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.186 4.797a2.42 2.42 0 1 0-2.86-2.448h1.178c.929 0 1.682.753 1.682 1.682zm-4.295 7.738h2.613c.929 0 1.682-.753 1.682-1.682V5.58h2.783a.7.7 0 0 1 .682.716v4.294a4.197 4.197 0 0 1-4.093 4.293c-1.618-.04-3-.99-3.667-2.35Zm10.737-9.372a1.674 1.674 0 1 1-3.349 0 1.674 1.674 0 0 1 3.349 0m-2.238 9.488-.12-.002a5.2 5.2 0 0 0 .381-2.07V6.306a1.7 1.7 0 0 0-.15-.725h1.792c.39 0 .707.317.707.707v3.765a2.6 2.6 0 0 1-2.598 2.598z"
+                  />
+                  <path
+                    d="M.682 3.349h6.822c.377 0 .682.305.682.682v6.822a.68.68 0 0 1-.682.682H.682A.68.68 0 0 1 0 10.853V4.03c0-.377.305-.682.682-.682Zm5.206 2.596v-.72h-3.59v.72h1.357V9.66h.87V5.945z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="grid property-main">
+          <div class="grid property-stat">
+            <div>Card</div>
+            <div>Card</div>
+            <div>Card</div>
+            <div>Card</div>
+          </div>
+          <div class="property-chart">Chart</div>
+          <div class="grid property-panel">
+            <div>panel</div>
+            <div>panel</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
