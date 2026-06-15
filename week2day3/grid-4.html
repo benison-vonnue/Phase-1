@@ -1,0 +1,71 @@
+<!-- ​Task 4 (50 min) - Responsive Grid Without Media Queries​
+​215.​ Create a product grid that responds fully without any @media query: grid-template-columns:​
+​repeat(auto-fill, minmax(min(100%, 280px), 1fr))​
+​216.​ ​Show the difference between auto-fill and auto-fit using a wide container: auto-fill leaves empty​
+​tracks, auto-fit does not​
+​217.​ ​Add a last-item spanning trick: the last item spans to the end using grid-column: auto / -1​
+​218.​ Add a featured item that spans 2 columns and 2 rows using grid-column: span 2 / grid-row:​
+​span 2 - verify it still works when the column count changes -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Without Media Queries</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .grid {
+        display: grid;
+      }
+      .property-1 {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      }
+      .property-2 {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      }
+      .property-3 {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      }
+            .property-4 {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      }
+      .parent {
+        border: 1px red solid;
+        gap: 2px;
+        padding: 2px;
+      }
+      .child {
+        border: 2px green double;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- auto-fill -->
+      <div class="grid property-1 parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
+      <!-- auto-fit -->
+      <div class="grid property-2 parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
+      <div class="grid property-3 parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child" style="grid-column: auto/-1"></div>
+      </div>
+      <div class="grid property-4 parent">
+        <div class="child" style="grid-column: span 2"></div>
+      </div>
+    </main>
+  </body>
+</html>
