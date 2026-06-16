@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specificity</title>
+    <link rel="stylesheet" href="specificity.css" />
+    <style>
+        /* 1, 0,1,0,0 */
+        #heading{
+            background-color: chocolate !important;
+        }
+        /* 1,0,0 */
+        #heading{
+            background-color: lightskyblue;
+        }
+
+    </style>
+  </head>
+  <body>
+    <main>
+        <!-- (1, 0, 0, 0) -->
+        <h1 class="bg-red bg-gray" id="heading" style="background-color: rgb(200, 255, 0);">Specificity</h1>
+    </main>
+  </body>
+</html>
+<!-- Here !important has more importance than any without it. Without !important symbol or with !important symbol rest tag precedence is show below.
+1. Inline Styles
+2. Internal Stylesheet
+3. Within External 
+  1. Id
+  2. Psuedoclass
+  3. Last Given Class
+  4. Class
+  5. Inner any Child, Child (Precedence Based on Last Added CSS)
+  6. Element -->
