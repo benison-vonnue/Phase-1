@@ -1,0 +1,376 @@
+<!-- ​Task 8 (45 min) - Style About Page Footer Component​
+​ 98.​
+1
+​199.​​Style the About page from Week 1​
+​201.​​Bottom bar: copyright left, legal links right - justify-content: space-between​
+​Build a rich four-column footer: brand column (logo text + tagline + social icons as circular icon​
+​buttons), and three navigation columns. Use Flexbox for the four-column layout with flex-wrap: wrap.​
+​200.​ ​On tablet (below 900px): two columns. On mobile (below 600px): one column.​ -->
+
+<!doctype html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <meta property="og:title" content="Lorem" />
+    <meta
+      property="og:description"
+      content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ab temporibus repellendus sit saepe explicabo facere, voluptatum rem. Dolore tempore fugit illum similique deleniti totam? Architecto velit commodi natus ipsa."
+    />
+    <meta property="og:image" content="https://picsum.photos/id/34/400/300" />
+    <meta property="og:site" content="https://vonnue.com" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+      *,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        pointer-events: none;
+      }
+
+      body {
+        font-family: "Bricolage Grotesque";
+      }
+
+      :root {
+        --color-primary: #d6d6d6;
+        --color-secondary: #a64ddb;
+        --color-secondary-400: #c35bff;
+        --color-bg: #0c0c0c;
+        --color-accent: #a5a5a5;
+      }
+
+      .text-primary {
+        color: var(--color-primary);
+      }
+
+      .text-secondary {
+        color: var(--color-secondary);
+      }
+
+      .text-accent {
+        color: var(--color-accent);
+      }
+
+      a {
+        color: var(--color-secondary);
+        text-decoration: none;
+        transition: 300ms;
+      }
+
+      a:hover {
+        color: var(--color-secondary-400);
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-primary);
+      }
+
+      header {
+        margin-top: 40px;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+      .width-100vw {
+        width: 100vw;
+      }
+
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gap-4 {
+        gap: 4em;
+      }
+
+      .mt-8 {
+        margin-top: 8em;
+      }
+      .mt-4 {
+        margin-top: 4em;
+      }
+
+      .mt-2 {
+        margin-top: 2em;
+      }
+      .mt-1 {
+        margin-top: 1em;
+      }
+      .mb-2 {
+        margin-bottom: 2em;
+      }
+
+      .my-20 {
+        margin-left: 20vw;
+        margin-right: 20vw;
+      }
+
+      .font-6xl {
+        font-size: 6em;
+      }
+      .font-5xl {
+        font-size: 5em;
+      }
+      .font-4xl {
+        font-size: 4em;
+      }
+      .font-2xl {
+        font-size: 2em;
+      }
+      .font-xl {
+        font-size: 1.5em;
+        word-spacing: 0.1em;
+      }
+      .font-md {
+        font-size: 0.8em;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      .card {
+        width: 400px;
+        border: var(--color-accent) solid 1px;
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 6px;
+        transition: 300ms;
+      }
+
+      .card:hover {
+        border: var(--color-primary) solid 1px;
+        box-shadow: 5px 3px 15px var(--color-primary);
+      }
+      dd {
+        margin-left: 2em;
+      }
+      .logo {
+        width: 200px;
+      }
+      .footer {
+        margin-top: 4em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2em;
+      }
+      .logos {
+        display: flex;
+        gap: 0.5em;
+      }
+      .mt-1 {
+        margin-top: 1em;
+      }
+      @media(max-width:720px){
+        .logo{
+            width: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="width-100vw flex center">
+      <nav>
+        <ul class="flex gap-4 mt-4">
+          <li><a href="index.html">Home</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mt-4 my-20">
+      <h1 class="font-6xl text-center">About Us</h1>
+      <section class="mt-2">
+        <h2 class="font-4xl text-center">Timeline</h2>
+        <dl class="mt-1">
+          <dt class="font-2xl">1999</dt>
+          <dd>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            ullam illum non sint commodi quae at! Sit incidunt at, officia quod
+            earum ut natus veniam quasi reprehenderit architecto ipsum eveniet.
+          </dd>
+          <dt class="font-2xl">2003</dt>
+          <dd>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            tenetur reiciendis vero totam harum odit placeat fugit voluptatem
+            unde asperiores porro rerum velit quia, cupiditate repudiandae ullam
+            mollitia iste nulla.
+          </dd>
+          <dt class="font-2xl">2006</dt>
+          <dd>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut,
+            sapiente rerum facere, harum iure cum quia minima exercitationem
+            amet molestias suscipit id incidunt aspernatur officia tempore
+            ipsam, autem voluptatem et?
+          </dd>
+          <dt class="font-2xl">2008</dt>
+          <dd>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iure
+            dignissimos inventore et aspernatur aliquid sequi quo tenetur est
+            laboriosam, hic rem adipisci laudantium sit quae, vitae asperiores
+            eum aut.
+          </dd>
+        </dl>
+      </section>
+      <section class="mt-2">
+        <h2 class="font-4xl text-center">Our mission</h2>
+        <blockquote cite="https://www.lipsum.com/" class="font-xl">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed sunt
+          consequuntur pariatur ducimus ipsum sequi iste animi laborum neque
+          voluptates nihil, dolorem fuga maiores. Facere molestias fugit debitis
+          cum facilis? Quis aut deleniti ab optio aperiam voluptate eligendi
+          minus reiciendis repellendus consectetur pariatur deserunt, soluta
+          esse magnam voluptas quos alias, placeat dolorum tempore nobis? Beatae
+          fuga ratione molestiae quisquam tenetur!
+        </blockquote>
+      </section>
+      <section class="mt-2">
+        <h2 class="font-4xl text-center">Our Three C's</h2>
+        <article>
+          <h3 class="font-2xl">Candor</h3>
+          <p class="mt-1">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
+            quisquam et expedita, eligendi vitae optio maiores, reiciendis at
+            natus beatae illum? Rerum, doloribus eius cupiditate dolorem eum
+            sint eveniet dolore!
+          </p>
+        </article>
+        <article>
+          <h3 class="font-2xl mt-1">Care</h3>
+          <p class="mt-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+            qui tempore ratione! Sequi illum aut expedita amet, ut quae error
+            facilis, doloremque laudantium eaque magnam libero est quis hic
+            reprehenderit.
+          </p>
+        </article>
+        <article>
+          <h3 class="font-2xl mt-1">Commitment</h3>
+          <p class="mt-1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut saepe
+            accusantium animi! Sit quo, saepe vero aliquam autem voluptate omnis
+            id illo hic minus eaque adipisci officiis asperiores necessitatibus
+            nostrum!
+          </p>
+        </article>
+      </section>
+      <section class="mt-2 footer">
+        <div class="logo">
+          <h1>Lorem</h1>
+          <p class="mt-1">Lorem is the best</p>
+          <div class="logos mt-1">
+            <a
+              href="https://x.com"
+              target="_blank"
+              aria-label="Follow us on Twitter"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                />
+              </svg>
+            </a>
+            <a href=""
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                />
+              </svg>
+            </a>
+            <a href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-globe"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="logo">
+          <p>Contact</p>
+          <hr class="mt-1" />
+          <div class="flex flex-col">
+            <address class="mt-1 font-md">
+              <p>
+                2nd Floor Key Tee Tower, Sultan Bathery, Kerala, India-673592
+              </p>
+            </address>
+            <address class="mt-1 font-md">
+              Singapore, 160 Robinson Road, #14-04 Singapore, Business
+              Federation Centre, Singapore 068914
+            </address>
+            <a href="tel:+919540216512" class="mt-1 font-md">+91 95402 16512</a>
+            <a href="mailto:benison.abraham@vonnue.com" class="font-md"
+              >benison.abraham@vonnue.com</a
+            >
+          </div>
+        </div>
+        <div class="logo">
+          <p>Get to Know Us</p>
+          <hr class="mt-1" />
+          <a href="" class="mt-1 font-md">More About Us</a><br />
+          <a href="" class="mt-1 font-md">How we Care</a><br />
+          <a href="" class="mt-1 font-md">View Openings</a>
+        </div>
+        <div class="logo">
+          <p>Engagement Models</p>
+          <hr class="mt-1" />
+          <a href="" class="mt-1 font-md">Our Fixed Budget Model</a><br />
+          <a href="" class="mt-1 font-md">Adaptive Partnership</a><br />
+          <a href="" class="mt-1 font-md">Our Approach</a>
+        </div>
+      </section>
+    </main>
+    <footer class="flex center mt-4 mb-2" style="width: 100vw">
+      <div style="width: 300px" class="flex space-between">
+        <p style="margin-right: auto;">&copy; 2026 Benison, Dev.</p>
+        <a href="">benison.dev</a>
+      </div>
+    </footer>
+  </body>
+</html>
