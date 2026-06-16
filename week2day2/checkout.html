@@ -1,0 +1,308 @@
+<!-- ​Task 6 (55 min) - Style Checkout Form with Flexbox​
+188. Take your checkout form from Wednesday and style it using Flexbox​
+​189.​ ​Two-column layout on desktop: label left (fixed 180px), input right (fills remaining width)​
+​190.​ ​On mobile (below 600px): stack label above input​
+​​
+​191.​ Paired fields (e.g. first name + last name, expiry month + year) side by side using a flex row​
+​with gap​
+​192.​ ​Submit and cancel buttons right-aligned using a flex row with justify-content: flex-end​
+​193.​ Style focus states, error states (red border + error message below), and the submit button​
+​hover state​ -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment / Checkout Form</title>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .center {
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .mx-1 {
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+      .mr-2 {
+        margin-right: 1em;
+      }
+      .mb-2 {
+        margin-bottom: 0.8em;
+      }
+      .mt-2 {
+        margin-top: 2em;
+      }
+      .gap-1 {
+        gap: 0.5em;
+      }
+      .basis-100 {
+        flex-basis: 100%;
+      }
+      .grow-1 {
+        flex-grow: 1;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .flex-end {
+        justify-content: flex-end;
+      }
+      input {
+        margin-bottom: 0;
+      }
+      input:user-invalid {
+        border: 2px solid red;
+      }
+      label {
+        width: 180px;
+      }
+
+      label:has(+ input:user-invalid) {
+        color: red;
+      }
+      .error {
+        margin-top: 0;
+        color: red;
+        opacity: 0;
+        font-size: small;
+      }
+      input:user-invalid + .error {
+        opacity: 100%;
+      }
+      input:user-invalid + p + .error {
+        opacity: 100%;
+      }
+      button[type="submit"]:hover,
+      button[type="submit"]:focus-visible {
+        background-color: lightgreen;
+      }
+      button[data-type="cancel"]:hover,
+      button[data-type="cancel"]:focus-visible {
+        background-color: rgb(255, 116, 116);
+      }
+      @media (max-width: 600px) {
+        .input-field {
+          flex-direction: column;
+        }
+        .input-field input {
+          width: 100%;
+          margin-right: 0;
+        }
+        .input-field textarea {
+          width: 100%;
+          margin-right: 0;
+        }
+        .input-field label {
+          align-self: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Checkout Form</h1>
+      <form action="" class="mx-1">
+        <fieldset>
+          <legend>Fields marked * are required</legend>
+          <fieldset class="mb-2">
+            <legend>Delivery Address</legend>
+            <div class="flex center mb-2 basis-100">
+              <div class="flex mr-2 grow-1 input-field">
+                <label for="firstname-input" class="mr-2">First Name *</label>
+                <div class="grow-1 flex flex-col">
+                  <input
+                    type="text"
+                    name="firstname-input"
+                    id="firstname-input"
+                    required
+                    class="grow-1"
+                  />
+                  <span class="error">Error Message from Backend</span>
+                </div>
+              </div>
+              <div class="flex mr-2 grow-1 input-field">
+                <label for="lastname-input" class="mr-2">Last Name *</label>
+                <div class="grow-1 flex flex-col">
+                  <input
+                    type="text"
+                    name="lastname-input"
+                    id="lastname-input"
+                    required
+                    class="grow-1"
+                  />
+                  <span class="error">Error Message from Backend</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="address-1-input" class="mr-2">Address Line 1*</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="text"
+                  name="address-1-input"
+                  id="address-1-input"
+                  required
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="address-2-input" class="mr-2">Address Line 2</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="text"
+                  name="address-2-input"
+                  id="address-2-input"
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="city-input" class="mr-2">City *</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="text"
+                  name="city-input"
+                  id="city-input"
+                  required
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="postcode-input" class="mr-2">Postcode *</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="text"
+                  name="postcode-input"
+                  id="postcode-input"
+                  required
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="country-input" class="mr-2">Country *</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="text"
+                  name="country-input"
+                  id="country-input"
+                  list="country-list"
+                  required
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+
+              <datalist id="country-list">
+                <option value="India"></option>
+                <option value="Mexico"></option>
+                <option value="South Africa"></option>
+                <option value="South Korea"></option>
+                <option value="Czechia"></option>
+                <option value="Canada"></option>
+                <option value="Bosnia and Herzegovina"></option>
+                <option value="Qatar"></option>
+                <option value="Switzerland"></option>
+                <option value="Brazil"></option>
+                <option value="Morocco"></option>
+                <option value="Haiti"></option>
+                <option value="Scotland"></option>
+                <option value="United States"></option>
+                <option value="Paraguay"></option>
+                <option value="Australia"></option>
+                <option value="Türkiye"></option>
+                <option value="Germany"></option>
+                <option value="Curaçao"></option>
+                <option value="Côte d'Ivoire"></option>
+              </datalist>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Payment Details</legend>
+            <div class="flex mb-2 basis-100 mr-2 input-field">
+              <label for="card-number-input" class="mr-2">Card Number *</label>
+              <div class="grow-1 flex flex-col">
+                <input
+                  type="number"
+                  name="card-number-input"
+                  id="card-number-input"
+                  required
+                  maxlength="16"
+                  class="grow-1"
+                />
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+            <div class="flex center mb-2">
+              <div class="flex mr-2 grow-1 input-field">
+                <label for="expiry-input" class="mr-2"
+                  >Expiry Month and Year *</label
+                >
+                <div class="grow-1 flex flex-col">
+                  <input
+                    type="month"
+                    id="expiry-input"
+                    name="expiry-input"
+                    min="2026-06"
+                    max="2035-06"
+                    required
+                    class="grow-1"
+                  />
+                  <span class="error">Error Message from Backend</span>
+                </div>
+              </div>
+              <div class="flex center grow-1 input-field">
+                <label for="cvv-input" class="mr-2">CVV *</label>
+                <div class="grow-1 flex flex-col">
+                  <input
+                    type="password"
+                    maxlength="4"
+                    required
+                    aria-describedby="cvv-tip"
+                    id="cvv-input"
+                    name="cvv-input"
+                    class="grow-1"
+                  />
+                  <p
+                    role="tooltip"
+                    id="cvv-tip"
+                    style="margin: 0em; font-size: x-small"
+                  >
+                    3 or 4 digits on the back of your card
+                  </p>
+                  <span class="error">Error Message from Backend</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex center mb-2 basis-100 input-field">
+              <label for="order-note-input" class="mr-2">Order Input</label>
+              <div class="grow-1 flex flex-col">
+                <textarea
+                  name="order-note-input"
+                  id="order-note-input"
+                  maxlength="500"
+                  class="grow-1"
+                ></textarea>
+                <span class="error">Error Message from Backend</span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="mt-2 flex flex-end gap-1">
+            <button type="submit">Submit</button>
+            <button data-type="cancel">Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
