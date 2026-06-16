@@ -1,0 +1,382 @@
+<!-- ​Task 7 (50 min) - Apply Flexbox to Week 1 Blog Page​
+​194.​ ​Style blog.html from Week 1 completely using Flexbox for all layout​
+​195.​ ​Sticky header using Flexbox. Sidebar + main content as a Flexbox row. Each article card using​
+​internal Flexbox for layout. 
+​197.​​​Responsive: single column below 768px using media query 
+
+​196.​ ​Add hover effects on article cards: lift with box-shadow transition​​ -->
+
+<!doctype html>
+<html lang="en-EU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <title>Multi-Article Blog Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+      :root {
+        --color-primary: #5409da;
+        --color-primary-200: #4e71ff;
+        --color-secondary: #8dd8ff;
+        --color-secondary-200: #bbfbff;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-family: "Google Sans";
+        background-color: var(--color-primary);
+        color: var(--color-secondary-200);
+        margin-left: 10vw;
+        margin-right: 10vw;
+      }
+      body > header {
+        margin-top: 2em;
+        display: flex;
+        gap: 2em;
+      }
+
+      body > header img {
+        border-radius: 50%;
+      }
+
+      body > header h1 span {
+        color: var(--color-secondary);
+      }
+      nav {
+        margin-top: 2em;
+      }
+      nav > ul > li {
+        list-style-type: none;
+      }
+      nav {
+        border: 2px var(--color-secondary-200) solid;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: sticky;
+        top: 5%;
+        background-color: var(--color-primary);
+        z-index: 100;
+      }
+      nav > ul {
+        display: flex;
+        gap: 2em;
+      }
+      a {
+        color: var(--color-secondary-200);
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--color-secondary);
+        text-decoration: underline;
+      }
+      .container {
+        margin-top: 2em;
+        display: flex;
+        width: 100%;
+        gap: 2em;
+        align-items: flex-start;
+      }
+      .container main {
+        flex-shrink: 1;
+      }
+      .container aside {
+        flex-shrink: 0;
+        width: 30%;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 10em;
+      }
+      body > footer {
+        margin-bottom: 4em;
+      }
+      footer ul li {
+        list-style-type: none;
+      }
+      main article {
+        border: 1px var(--color-secondary-200) solid;
+        padding: 1em;
+        border-radius: 20px;
+        margin-bottom: 2em;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      main article:hover {
+        box-shadow:
+          0 4px 10px -1px var(--color-secondary),
+          0 2px 10px -1px var(--color-secondary);
+        transform: translateY(-10px) translateX(-10px) scale(1);
+        /* Smooth transition for both shadow and position */
+      }
+      article li {
+        margin-left: 1.2em;
+      }
+      article header h2 {
+        margin-bottom: 0.5em;
+      }
+      article header h3 {
+        margin-bottom: 0.5em;
+      }
+      article section {
+        margin-bottom: 0.8em;
+      }
+      article footer a {
+        margin-top: 0.5em;
+      }
+      .recent-post {
+        margin-bottom: 1em;
+      }
+      @media (max-width:768px){
+        .container{
+            flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header (logo text + tagline) -->
+    <header>
+      <img src="https://picsum.photos/id/12/50" alt="Logo" />
+      <h1>
+        Squarespace
+        <span id="tagline"
+          ><small> - a space for ideas and innovations</small></span
+        >
+      </h1>
+    </header>
+    <!-- nav (Home, Blog, About, contact links) -->
+    <!-- The nav must have aria-label='Main navigation' to distinguish it from the aside nav​ -->
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <!-- main containing three complete articles, aside (Recent Posts and Categories sections) -->
+    <!-- ​Each article must use: article element, header (with h2 title and time element showing publication​
+    ​date), section for the body text, footer (with the author name in a span and a category tag as a link)​ -->
+    <div class="container">
+      <main>
+        <article>
+          <header>
+            <h2>Self-Regulating Motivation and Emotion During Learning</h2>
+            <h3><time datetime="2026-05-28">28 May</time></h3>
+          </header>
+          <section>
+            Self-regulated learning is a cyclical process of forethought,
+            performance, and self-reflection that allows a learner to regulate
+            their learning (1). While a number of cognitive processes,
+            particularly metacognitive processes, are involved in self-regulated
+            learning, a learner&apos;s ability to assess and regulate their
+            motivational and emotional state can heavily influence their
+            self-regulation of their learning. A recent paper in Educational
+            Psychologist by Stockinger, Nett, and Dresel (2026) proposed a
+            framework for understanding how motivational and emotional
+            regulation interact (2).
+            <br />
+            Motivations and emotions about learning can have substantial
+            overlap, but can also be treated as distinct (2). Motivations about
+            learning include goal-directed actions that initiated, sustained,
+            and driven by the learner&apos;s expectations for success and values
+            assigned to tasks and outcomes. Emotions about learning focus on the
+            affective and arousal components of the experience of the learning
+            process - whether it is pleasant or unpleasant, activating or
+            deactivating. Typically, these two processes overlap. A learner may
+            work towards a goal and feel joy when it is achieved, or sadness
+            when it is not. However, it is possible to have a neutral or
+            negative response to goal achievement as well (what I would call
+            soulless striving wherein the learner places unreasonable
+            expectations on themselves and on the learning process and feels
+            disconnected from the end result).
+            <br />
+            Throughout the paper, Stockinger et al. (2026) highlight the
+            interplay between motivational regulation and emotional regulation
+            and call for a model of self-regulated learning that acknowledges
+            how closely interwoven the two can be. An aspect of this work that I
+            find really interesting is the emphasis on how the learner perceives
+            the process. Is the learner seeking to improve their motivation?
+            Alleviate boredom? Both? The authors point out that two learners can
+            approach self-regulated learning in very different ways depending on
+            how they evaluated their motivational and emotional needs.
+            <br />
+            The ability to assess these needs and set goals, of course, relies
+            on a learner&apos;s metamotivational and metaemotional knowledge.
+            Can they identify a feeling of discomfort or frustration? Do they
+            interpret that as needing to better define their goals, set
+            different expectations, or a misunderstanding of the outcomes? Or
+            does it stem from feelings of anxiety or despondency? There may not
+            be one right answer, and the degree to which attempting to regulate
+            motivations, emotions, or both is fruitful depends very much on the
+            learner&apos;s perceptions of their needs.
+            <br />
+            Understanding the interplay between motivational and emotional
+            regulation is critical to better understanding self-regulated
+            learning. In my work with medical students I often see a point where
+            a student&apos;s ability to successfully assess and implement an
+            effective (cognitive) learning strategy is impacted by their
+            motivational or emotional regulation. If they feel disconnected from
+            their goal of becoming a doctor, or are experiencing social
+            isolation and a lack of support, then I feel a little silly
+            providing guidance on how to approach practice questions or
+            incorporate flashcards. While that may be helpful to some extent, I
+            don&apos;t feel I&apos;m actually helping the student to fully
+            address what they need to be successful.
+          </section>
+          <footer>
+            <strong>By <span>Althea Need Kaminske</span></strong
+            ><br />
+            <a href="#"
+              >For Teachers, For Researchers, Learning Scientists Posts</a
+            >
+          </footer>
+        </article>
+        <article>
+          <header>
+            <h2>Arts for Learning and Wellbeing in Education</h2>
+            <h3><time datetime="2026-05-21">May 21</time></h3>
+          </header>
+          <section>
+            Cover image by Kampus Production on Pexels By Carolina
+            Kuepper-Tetzel Recently, I have become interested in the impact of
+            engaging in art on learning and wellbeing. This interest has sent me
+            into a rabbit hole of fascinating research and has sparked new ideas
+            for my own teaching practice. In today&apos;s digest, I&apos;m
+            sharing resources around this topic.
+            <br />
+            <ol>
+              <li>
+                Arts participation by the Education Endowment Foundation (EEF)
+                <br />
+
+                This short article summarizes the impact of arts-based
+                approaches in primary and secondary education on the performance
+                in different subjects and personal attitudes.
+              </li>
+              <li>
+                Getting creative in schools to improve young people&apos;s
+                wellbeing by Prof Neil Humphrey for BERA <br />
+
+                A blog post reviews research on the effects of art engagement on
+                younger student populations and demonstrates the multifaceted
+                benefits creative outlets can have.
+              </li>
+              <li>
+                Engaging in the arts for health by Prof Daisy Fancourt for
+                Expeditions <br />
+
+                It is impossible to talk about this topic without featuring Prof
+                Daisy Fancourt who is a Professor for Psychobiology and
+                Epidemiology at University College London. She has spent years
+                investigating the effects of the arts on health and wellbeing on
+                a large scale. She recently published a book (Art Cure) which is
+                shortlisted for the Women&apos;s Prize for Non-Fiction. In the
+                article above she gives an overview of some essential findings.
+              </li>
+              <li>
+                Popular Podagogy: How to integrate art and bring artists into
+                your classroom with Dr Tiina Kukkonen for the Popular Podagogy
+                podcast
+                <br />
+
+                This final resource is a podcast episode interview with Dr Tiina
+                Kukkonen who explains how art-integrated teaching practice could
+                look like.
+              </li>
+              <li>
+                Embedding the Arts in Schools: Why It Matters by My-Progression
+                <br />
+                A video explaining different ways of how art elements can be
+                implemented in subjects and how learners can be motivated to
+                participate.
+              </li>
+            </ol>
+          </section>
+          <footer>
+            <strong>By <span>By Carolina Kuepper-Tetzel</span></strong
+            ><br />
+            <a href="#">Digests</a>
+          </footer>
+        </article>
+        <article>
+          <header>
+            <h2>
+              What&apos;s Missing in Professional Development and Educator
+              Preparation
+            </h2>
+            <h3><time datetime="2026-05-14">May 14</time></h3>
+          </header>
+          <section>
+            Katrina G. Huels is an educational consultant and former education
+            leader with more than twenty years of experience working across
+            classrooms, programs, and district leadership. Her work focuses on
+            helping educators sustain their passion and effectiveness in one of
+            the most emotionally demanding fields. She is the author of
+            Transformational Tools for Special Educators: How to Beat Burnout
+            and Become the Best at What You Do (Corwin, 2026) and The Motivation
+            Toolkit: Cultivate Your Inner Drive. <br />
+            Drawing on a background in psychology, neuroscience-informed
+            practice, and educational leadership, Katrina translates research
+            into practical tools educators can use in the middle of a demanding
+            school day. Her work centers on emotional intelligence development,
+            neuroplasticity, and the cultivation of professional resilience.
+            <br />
+            Katrina is the creator of Applied Harmony, an initiative focused on
+            helping educators build inner mastery and long-term professional
+            sustainability through emotional intelligence development. Her work
+            advocates for emotional intelligence training to be recognized not
+            as a wellness trend, but as a professional competency that
+            strengthens school culture, educator retention, and student
+            outcomes. <br />
+          </section>
+          <footer>
+            <strong>By <span>Cindy Nebel</span></strong
+            ><br />
+            <a href="#"
+              >For Teachers, For Students, Learning Scientists Posts</a
+            >
+          </footer>
+        </article>
+      </main>
+      <aside>
+        <div class="recent-post">
+          <h2>Recent Post</h2>
+          <ul>
+            <li>
+              <a href="#"
+                >Self-Regulating Motivation and Emotion During Learning</a
+              >
+            </li>
+            <li>
+              <a href="#">Arts for Learning and Wellbeing in Education</a>
+            </li>
+            <li>
+              <a href="#"
+                >What&apos;s Missing in Professional Development and Educator
+                Preparation</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Categories</h2>
+          <ul>
+            <li>For Teachers, For Students, Learning Scientists Posts</li>
+            <li>Digest</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <h2>Contact Us</h2>
+      <ul>
+        <li><a href="https://learingscientis.org">Web</a></li>
+        <li><a href="mailto:benison.abraham@vonnue.com">Mail</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
