@@ -1,0 +1,316 @@
+<!-- Task 3 (45 min) - Navigation Bar​
+​177.​ Build a sticky navigation bar: logo on the left, navigation links centred (using flex: 1 and​
+​justify-content: center on a nav element), and Login/Sign Up buttons on the right​
+​178.​ ​Add gap for consistent spacing between nav items. Add hover and focus-visible styles.​
+​179.​At 768px screen width, hide the nav links (set display: none). Leave a hamburger placeholder​
+​button visible (no JavaScript yet).​
+​180.​ ​The bar must stay visible on scroll: position: sticky, top: 0, z-index: 100. Add a subtle​
+​box-shadow when sticky.​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    :root {
+      --color-primary: #333d6d;
+      --color-primary-200: #723ec3;
+      --color-secondary: #ffcf95;
+      --color-secondary-200: #fff0d9;
+    }
+    *,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+    }
+    a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      transition: 300ms;
+    }
+    a:hover {
+      color: var(--color-secondary-200);
+      text-decoration: underline;
+    }
+    a:focus-visible {
+      color: var(--color-secondary-200);
+    }
+    .font-poppins {
+      font-family: "Poppins", sans-serif;
+    }
+    .flex {
+      display: flex;
+    }
+    .mx-10 {
+      margin-left: 10em;
+      margin-right: 10em;
+    }
+    .mt-4 {
+      margin-top: 4em;
+    }
+    .mt-2 {
+      margin-top: 2em;
+    }
+    .mt-6 {
+      margin-top: 6em;
+    }
+    .mb-6 {
+      margin-bottom: 6em;
+    }
+    .border {
+      border: 1px var(--color-secondary-200) solid;
+    }
+    .p-1 {
+      padding: 1em;
+    }
+    .p-0-5 {
+      padding: 0.5em;
+    }
+    .rounded-md {
+      border-radius: 0.8em;
+    }
+    .grow-1 {
+      flex-grow: 1;
+    }
+    .center {
+      justify-content: center;
+      align-items: center;
+    }
+    .gap-x-2 {
+      column-gap: 2em;
+    }
+    .text-primary {
+      color: var(--color-primary);
+    }
+    .text-secondary {
+      color: var(--color-secondary);
+    }
+    .bg-primary {
+      background-color: var(--color-primary);
+    }
+    .bg-secondary {
+      background-color: var(--color-secondary);
+    }
+    .rounded-full {
+      border-radius: 50%;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .sticky {
+      position: sticky;
+    }
+    .top-1 {
+      top: 1em;
+    }
+    .z-100 {
+      z-index: 100;
+    }
+    .call-to-action:hover {
+      color: var(--color-primary-200);
+      border: 1px var(--color-primary-200) solid;
+    }
+    .px-1 {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .hidden {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      nav div:first-child {
+        flex-grow: 1;
+      }
+      .ham {
+        display: block;
+      }
+      .mx-10 {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+    }
+
+    nav {
+      transition: 300ms;
+    }
+
+    .nav-parent {
+      container-type: scroll-state;
+      > nav {
+        @container scroll-state(stuck: top) {
+          box-shadow: var(--color-secondary-200) 10px 5px 5px;
+        }
+      }
+    }
+  </style>
+  <body class="bg-primary font-poppins">
+    <main class="text-secondary mb-6">
+      <div class="mx-10 mt-4"><a href="">Skip to Main Content</a></div>
+      <div
+        class="sticky top-1 z-100 bg-primary border rounded-md mt-2 mx-10 nav-parent"
+      >
+        <nav class="flex p-1 center border rounded-md">
+          <div>
+            <a href=""
+              ><img
+                src="https://picsum.photos/id/237/50"
+                class="rounded-full"
+                alt=""
+            /></a>
+          </div>
+          <div class="grow-1 nav-links">
+            <ul class="flex center gap-x-2">
+              <li><a href="">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="">Team</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex center gap-x-2 nav-links">
+              <li><a href="">Signup</a></li>
+              <li>
+                <a
+                  href=""
+                  class="border rounded-md p-0-5 bg-secondary text-primary call-to-action"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="hidden border rounded-md p-0-5 px-1 bg-secondary text-primary call-to-action ham"
+          >
+            &#9776;
+          </div>
+        </nav>
+      </div>
+
+      <section class="mx-10 mt-6">
+        <h1 class="text-center">Lorem Page</h1>
+        <p class="mt-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, error.
+          Aliquid vitae voluptas beatae cupiditate quisquam, nemo veritatis
+          quibusdam minima sapiente dignissimos ipsam, perspiciatis officia
+          doloribus dicta ducimus amet. Iure? Animi, molestias? Sint natus
+          quibusdam sed obcaecati aperiam placeat assumenda quod quas, repellat
+          aliquam hic fugit inventore mollitia quae nemo autem aut dolores porro
+          voluptatibus suscipit accusamus laboriosam eveniet amet? Autem atque
+          et labore, alias dignissimos magnam distinctio quibusdam quod, quas
+          maiores ullam a itaque sit incidunt veritatis reiciendis, error ex
+          repellendus enim ad! Asperiores nam ipsam ipsum recusandae.
+          Consequatur!
+        </p>
+        <p class="mt-2">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+          quos error omnis ab consequuntur maxime quod quam numquam hic est! Hic
+          quibusdam adipisci quaerat quam aperiam fuga est amet velit.
+          Voluptatibus nam est commodi distinctio quasi iste quos, veritatis
+          laudantium in impedit ea soluta, tempora aliquid porro, praesentium
+          eum ipsa fugiat earum sunt accusamus voluptatem dolorum provident
+          beatae! Debitis, inventore! Eaque ratione architecto laboriosam
+          voluptatum unde accusantium eius assumenda numquam placeat. Placeat,
+          pariatur. Facere accusantium doloremque, tempora vitae dignissimos
+          illo quis recusandae nam facilis consequatur aut error explicabo
+          officiis deleniti. Praesentium quia, saepe a porro dolorem vel
+          accusantium! Cupiditate nihil ab atque eos, vero neque illum facilis
+          voluptate molestiae suscipit pariatur quae! Rerum sequi optio ratione,
+          in quas expedita ab?
+        </p>
+        <p class="mt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quia
+          at dolor consequatur mollitia, facilis nam, in, modi architecto sit a
+          obcaecati? Officiis quia illo repudiandae facere quibusdam facilis
+          fuga. Officia molestiae harum impedit, perspiciatis suscipit nulla
+          maiores, similique placeat fuga, soluta possimus? Animi praesentium a
+          eos distinctio voluptatibus dicta suscipit veritatis optio voluptate?
+          Ipsa, cum laborum? Sint, inventore alias. Adipisci, iusto. Quia
+          cupiditate consequuntur id, sunt repellat laudantium possimus itaque
+          odit, temporibus a tempora sequi delectus ipsum, ducimus quasi
+          quaerat? Et distinctio ipsum culpa nostrum odio amet nisi sapiente!
+          Architecto ex voluptatibus, quo dolorum at amet facere, sint
+          voluptatem omnis voluptatum cumque natus atque illo? Eaque
+          perspiciatis non, culpa expedita atque deserunt odio earum.
+          Consequatur earum sed quasi voluptates!
+        </p>
+        <p class="mt-2">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          iure debitis voluptas repudiandae nihil cumque saepe. Quasi atque
+          neque nulla porro tenetur aspernatur architecto eveniet odit. Ducimus
+          debitis ullam iste! Id consectetur sit recusandae maxime eaque non
+          reiciendis enim nostrum nobis. Sed fuga reiciendis eligendi aspernatur
+          vitae debitis! Quo, animi sit corporis consequuntur tenetur quidem
+          porro hic? Veritatis, quaerat doloribus. Temporibus nesciunt minus
+          ipsam error necessitatibus consequatur dolor sunt esse fugit
+          recusandae accusamus obcaecati laboriosam ad maxime totam aperiam qui
+          quidem numquam ullam est doloribus quibusdam, cum dolore? Laborum, a?
+          Esse voluptatum veniam eum officia quaerat enim? Corporis numquam
+          reiciendis illum laborum sequi rem velit sed totam, sapiente sint.
+          Reprehenderit quo minus nisi perferendis aliquam saepe, quisquam nemo
+          tenetur quibusdam. Repellendus architecto at, ullam quos saepe ad eos
+          sed accusantium perferendis placeat pariatur odit tempora quisquam nam
+          expedita autem accusamus rerum. Id veniam totam ullam iusto illum.
+          Rem, accusamus ratione?
+        </p>
+        <p class="mt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem esse
+          odit quis, ea ad earum debitis soluta hic. Autem, dolorum! Error
+          voluptas praesentium odio deserunt adipisci, facere minima molestiae
+          in? Error, expedita laborum. Quo excepturi dolorum tenetur, fuga
+          minima repellat cum beatae sit mollitia debitis dolore neque eius
+          doloremque consequatur saepe unde! Ipsum voluptatibus ratione minima.
+          Alias, odio. Labore, officia? Aut, odio beatae tempora adipisci error
+          aliquam saepe mollitia perspiciatis corrupti laudantium, illo ut quae.
+          Quod dolores dolore, at possimus incidunt ea architecto atque iste
+          qui, necessitatibus magni dicta doloremque. Eaque voluptatem
+          blanditiis libero cupiditate possimus quae quis eius nobis aliquam,
+          porro consequatur eveniet rem, facilis veniam numquam, odio iste ex.
+          Quisquam natus aut obcaecati eius nobis veritatis sit. A! Eius laborum
+          ex dolorum suscipit aliquid vel officiis ratione quisquam aperiam,
+          iste perspiciatis et fugiat ab veritatis impedit nobis iusto eveniet
+          aspernatur minus sequi expedita minima! Repellendus eligendi
+          voluptatem illum?
+        </p>
+        <p class="mt-2">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+          explicabo. In fugit quisquam maxime tenetur repudiandae sint quod illo
+          atque consequuntur ratione vitae, quo, tempora autem doloremque iusto
+          incidunt commodi. Repellat commodi quis harum officiis ipsa reiciendis
+          placeat ipsum facere hic nihil nesciunt eum ducimus deleniti
+          aspernatur, ex exercitationem doloremque accusamus est ab ea et
+          voluptatibus error veniam? Veniam, iusto. Quaerat, tenetur a! Earum,
+          ratione! Animi, harum? Quia dicta, nemo repudiandae dignissimos
+          facilis esse temporibus. Accusamus, sint porro ipsam dolorem nostrum
+          nulla deserunt facere corporis vitae quis, voluptates ullam minima?
+          Soluta ducimus et pariatur saepe doloribus error nihil molestiae autem
+          eligendi ratione enim architecto ab, veritatis nulla sit. Temporibus
+          reiciendis possimus dolor iusto consectetur soluta nemo quaerat
+          debitis officia in!
+        </p>
+        <p class="mt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+          itaque, aliquam quibusdam pariatur repellendus id recusandae
+          perferendis cumque soluta vero nam, cupiditate odit ab iusto modi
+          autem porro provident esse? Aliquam at, est quisquam odit amet
+          voluptatibus recusandae enim. Ipsa tempore amet aliquam reiciendis
+          voluptates! Accusamus quis incidunt dolorum, assumenda nulla
+          architecto, accusantium quia at ipsam temporibus excepturi distinctio
+          voluptatum. Inventore architecto libero magnam cupiditate possimus
+          animi obcaecati deleniti dolorum quas quasi doloribus, provident
+          veritatis natus alias sint repellat, temporibus velit, et fuga
+          consectetur est! Ex, placeat! Nobis, sint laboriosam!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
