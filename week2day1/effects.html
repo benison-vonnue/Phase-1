@@ -1,0 +1,239 @@
+<!-- ​Task 6 (50 min) - Backgrounds, Borders & Shadows​
+​156.​
+​Create effects.html. Demonstrate every background property on separate elements:​
+​ ackground-color, background-image with a URL, background-size (cover, contain, and specific px),​
+b
+​background-position, background-repeat, background-attachment: fixed​
+​157.​ ​Create two linear-gradient and two radial-gradient backgrounds - at least one uses three colour​
+​stops and transparent​
+​158.​ ​Demonstrate four border styles (solid, dashed, dotted, double), border-radius as a circle (50%),​
+​pill (9999px), and individual corners with different values​
+​159.​ ​Add: a soft box-shadow (elevation), a hard offset shadow, an inner inset shadow, and layered​
+​multiple shadows on one element​ -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backgrounds, Borders & Shadows</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .bg-image {
+        background-image: url("https://picsum.photos/id/237/1600");
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .bg-gradient-1 {
+        background: linear-gradient(
+          #e66465 20%,
+          #9198e5 50%,
+          #0015ff 80%,
+          transparent
+        );
+      }
+      .bg-gradient-2 {
+        background: linear-gradient(
+          to left,
+          #e66465 20%,
+          #9198e5 50%,
+          #0015ff 80%
+        );
+      }
+      .bg-radial-1 {
+        background: radial-gradient(#e66465 20%, #9198e5 50%, #0015ff 80%);
+      }
+      .bg-radial-2 {
+        background: radial-gradient(
+          circle at center,
+          #e66465 20%,
+          #9198e5 50%,
+          #0015ff 80%
+        );
+      }
+      .width-100vw {
+        width: 100vw;
+      }
+      .height-100vw {
+        height: 100vh;
+      }
+      .width-50vw {
+        width: 50vw;
+      }
+      .height-50vw {
+        height: 50vh;
+      }
+      .inline {
+        display: inline;
+      }
+      .flex {
+        display: flex;
+      }
+      .text-white {
+        color: white;
+      }
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+      .m-20 {
+        margin: 20px;
+      }
+      .border-box {
+        box-sizing: border-box;
+      }
+      .border-solid {
+        border: black solid 10px;
+      }
+      .border-dotted {
+        border: black dotted 10px;
+      }
+      .border-dashed {
+        border: black dashed 10px;
+      }
+      .border-double {
+        border: black double 10px;
+      }
+      .border-rounded {
+        border-radius: 50%;
+      }
+      .width-500px {
+        width: 500px;
+      }
+      .height-500px {
+        height: 500px;
+      }
+      .border-rounded-9999px {
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="bg-image width-100vw height-100vw"></section>
+      <section class="width-100vw height-50vw flex">
+        <div
+          class="width-50vw height-50vw bg-gradient-1 text-white flex center"
+        >
+          linear-gradient(#e66465 20%, #9198e5 50%, #0015ff 80%, transparent)
+        </div>
+        <div
+          class="width-50vw height-50vw bg-gradient-2 text-white flex center"
+        >
+          linear-gradient( to left, #e66465 20%, #9198e5 50%, #0015ff 80%)
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex">
+        <div class="width-50vw height-50vw bg-radial-1 text-white flex center">
+          radial-gradient(#e66465 20%, #9198e5 50%, #0015ff 80%)
+        </div>
+        <div class="width-50vw height-50vw bg-radial-2 text-white flex center">
+          radial-gradient(circle at center, #e66465 20%, #9198e5 50%, #0015ff
+          80%)
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex m-20">
+        <div class="width-50vw height-50vw border-box border-solid flex center">
+          border-solid
+        </div>
+        <div
+          class="width-50vw height-50vw border-box border-dotted flex center"
+        >
+          border-dotted
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex m-20">
+        <div
+          class="width-50vw height-50vw border-box border-dashed flex center"
+        >
+          border-dashed
+        </div>
+        <div
+          class="width-50vw height-50vw border-box border-double flex center"
+        >
+          border-double
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex m-20">
+        <div
+          class="width-500px height-500px border-solid border-rounded flex center"
+        >
+          border-rounded - circle
+        </div>
+        <div
+          class="width-50vw height-50vw border-solid border-rounded-9999px flex center"
+        >
+          border-rounded - pill - 9999px
+        </div>
+        <div
+          class="width-500px height-500px border-solid flex center"
+          style="border-radius: 10% 60% 30% 40%"
+        >
+          border-radius: 10% 60% 30% 40%;
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex m-20">
+        <div class="width-50vw height-50vw border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow: 10px 5px 5px red;
+            "
+            class="flex center"
+          >
+            Soft Shadow
+          </div>
+        </div>
+        <div class="width-50vw height-50vw border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow: red 60px -30px;
+            "
+            class="flex center"
+          >
+            Hard Offset Shadow
+          </div>
+        </div>
+      </section>
+      <section class="width-100vw height-50vw flex m-20">
+        <div class="width-50vw height-50vw border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow: inset 5em 1em red;
+            "
+            class="flex center"
+          >
+            Inset Shadow
+          </div>
+        </div>
+
+        <div class="width-50vw height-50vw border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow:
+                9px 9px red,
+                18px 18px blue,
+                27px 27px green;
+            "
+            class="flex center"
+          ></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
