@@ -1,0 +1,105 @@
+<!-- ​Task 8 (50 min) - Apply Styles to Week 1 Home Page​
+​164.​
+​Style index.html from Week 1 using your design system variables, type scale, box model​
+​corrections, backgrounds, and shadows​
+​165.​ ​All CSS must be in an external stylesheet - zero inline styles and zero style attributes in the​
+​HTML​
+​166.​ ​The page must look intentionaully designed - not browser defaults - but does not need to be​
+​complete. Focus on applying today's concepts.​
+​167.​ ​Take a screenshot before (browser defaults) and after. Commit with message: 'style: apply day​
+​1 CSS to home page'​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <meta property="og:title" content="Lorem" />
+    <meta
+      property="og:description"
+      content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ab temporibus repellendus sit saepe explicabo facere, voluptatum rem. Dolore tempore fugit illum similique deleniti totam? Architecto velit commodi natus ipsa."
+    />
+    <meta property="og:image" content="https://picsum.photos/id/34/400/300" />
+    <meta property="og:site" content="https://vonnue.com" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="width-100vw flex center">
+      <nav>
+        <ul class="flex gap-4 mt-4">
+          <li aria-current="page"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mt-4 my-20">
+      <h1 class="font-6xl text-center">
+        Empowering Digital Journeys for Startups and Enterprises
+      </h1>
+      <section class="mt-2">
+        <h2 class="text-center">Features</h2>
+        <div class="mt-2 flex">
+          <article class="card">
+            <h3>MVP Development</h3>
+            <p class="mt-1 text-accent">
+              Turn your vision into a market-ready product with our agile MVP
+              development process. We help you test, validate, and refine your
+              ideas efficiently for a strong market entry.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Custom Software Development</h3>
+            <p class="mt-1 text-accent">
+              Create bespoke software solutions designed to solve unique
+              challenges. We ensure quality, scalability, and efficiency in
+              every step of development.
+            </p>
+          </article>
+          <article class="card">
+            <h3>SaaS Development</h3>
+            <p class="mt-1 text-accent">
+              Develop robust SaaS platforms with our expertise in scalable cloud
+              infrastructure, API integrations, and subscription models tailored
+              to your business needs.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="mt-2">
+        <h2 class="text-center">Testimonials</h2>
+        <ul class="mt-2 flex">
+          <li class="card">
+            <blockquote cite="https://testimonial.to/" class="text-accent">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Exercitationem iusto mollitia distinctio illo modi, suscipit
+              deleniti vel cumque? Laboriosam, voluptates magnam. Autem, totam
+              perferendis adipisci sed repellat commodi minima quae?
+            </blockquote>
+          </li>
+          <li class="card">
+            <blockquote cite="https://www.lipsum.com/" class="text-accent">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique dolore fuga iure architecto ducimus eveniet dignissimos
+              ad laboriosam illum suscipit, enim mollitia nobis, voluptatum
+              odio, rerum et blanditiis? Ad, reiciendis?
+            </blockquote>
+          </li>
+          <li class="card">
+            <blockquote cite="https://www.lipsum.com/" class="text-accent">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+              quasi, odit illo maiores molestiae fugit vitae ea labore minima
+              ipsa rem reiciendis voluptate quaerat alias in illum aut veniam a.
+            </blockquote>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="mt-4">
+      <p class="text-center">&copy; 2026 Benison, Dev.</p>
+    </footer>
+  </body>
+</html>
