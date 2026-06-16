@@ -1,0 +1,127 @@
+<!-- ​Task 3 (45 min) - Transitions - Every Timing Function​
+​245.​ Create transitions.html and demonstrate all five timing functions on identical boxes: linear,​
+​ease, ease-in, ease-out, ease-in-out - record the visual difference​
+​246.​ ​Use the DevTools transition editor to find a bouncy cubic-bezier value. Apply it to a button hover​
+​effect.​
+​247.​ ​Build a staggered sequence: when hovering a card, the title transitions first, then the​
+​description 50ms later, then the button 100ms later - using transition-delay​
+​248.​ ​Add a transition on outline for focus states - the ring should animate in, not snap. Never remove​
+​the focus ring, only style it.​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions - Every Timing Function</title>
+    <style>
+      .box-container {
+        border: 1px solid red;
+        height: 100px;
+      }
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100vw);
+        }
+      }
+      .box {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+      }
+      .box-1 {
+        animation: move linear 5s infinite;
+      }
+      .box-2 {
+        animation: move ease 5s infinite;
+      }
+      .box-3 {
+        animation: move ease-in 5s infinite;
+      }
+      .box-4 {
+        animation: move ease-out 5s infinite;
+      }
+      .box-5 {
+        animation: move ease-in-out 5s infinite;
+      }
+      .box-6 {
+        animation: move cubic-bezier(0.51, 0.46, 0.83, 0.1) 5s infinite;
+      }
+      .cubic-button:hover {
+        background-color: red;
+      }
+      .cubic-button {
+        transition-timing-function: cubic-bezier(0.51, 2.17, 0.39, -0.64);
+        transition-duration: 5s;
+        outline: red 1px solid;
+      }
+      .cubic-button:focus-visible {
+        background-color: red;
+      }
+      .card {
+        display: inline-block;
+        border: 1px red solid;
+        transition: 300ms;
+      }
+      .card h3 {
+        opacity: 0;
+      }
+      .card p {
+        opacity: 0;
+        transition-delay: 50ms;
+      }
+      .card .card-button {
+        opacity: 0;
+        transition-delay: 100ms;
+      }
+      .card:hover h3,
+      .card:hover p,
+      .card:hover .card-button {
+        opacity: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>Linear</h2>
+      <div class="box-container">
+        <div class="box box-1"></div>
+      </div>
+      <h2>Ease</h2>
+      <div class="box-container">
+        <div class="box box-2"></div>
+      </div>
+      <h2>Ease In</h2>
+      <div class="box-container">
+        <div class="box box-3"></div>
+      </div>
+      <h2>Ease Out</h2>
+      <div class="box-container">
+        <div class="box box-4"></div>
+      </div>
+      <h2>Ease In Out</h2>
+      <div class="box-container">
+        <div class="box box-5"></div>
+      </div>
+      <h2>Cubic Bezier - cubic-bezier(.51,.46,.83,.1)</h2>
+      <div class="box-container">
+        <div class="box box-6"></div>
+        <div>
+          <button class="cubic-button">Bouncy on Hover</button>
+        </div>
+      </div>
+      <h2>Staggered Animation</h2>
+      <div class="card">
+        <span>Hover Here</span>
+        <h3>Card Heading</h3>
+        <p>Card Content</p>
+        <div class="card-button">
+          <button>Click Here</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
