@@ -1,0 +1,64 @@
+<!-- ​Task 2 (40 min) - Fluid Typography & Spacing with clamp()​
+​241.​ Replace all fixed-size headings with clamp() values: h1: clamp(2.4rem, 5vw + 1rem, 5.6rem) -​
+​verify it scales smoothly by dragging the browser window​
+​242.​ ​Create a complete fluid type scale for h1–h6 and body using clamp() - minimum, preferred, and​
+​maximum values for each​
+​243.​ ​Use clamp() for fluid padding and gap spacing: padding: clamp(1rem, 3vw, 3rem)​
+​244.​ Use a container query: @container (min-width: 500px) to change a card layout based on its​
+​container, not the viewport​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid Typography & Spacing with clamp()</title>
+    <style>
+      body {
+        container-name: body;
+        container-type: inline-size;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 3vw, 3rem);
+      }
+      h1 {
+        font-size: clamp(2.4rem, 5vw + 1rem, 5.6rem);
+        padding: clamp(1rem, 3vw, 3rem);
+      }
+      h2 {
+        font-size: clamp(2.1rem, 4.5vw + 1rem, 5.3rem);
+        padding: clamp(1rem, 3vw, 3rem);
+      }
+      h3 {
+        font-size: clamp(1.8rem, 4vw + 1rem, 5rem);
+        padding: clamp(1rem, 3vw, 3rem);
+      }
+      h4 {
+        font-size: clamp(1.5rem, 3.5vw + 1rem, 4.7rem);
+      }
+      h5 {
+        font-size: clamp(1.2rem, 3vw + 1rem, 4.4rem);
+      }
+      h6 {
+        font-size: clamp(0.9rem, 2.5vw + 1rem, 4.1rem);
+      }
+      @container (min-width: 500px) {
+        main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>This is a h1 Heading</h1>
+      <h2>This is a h2 Heading</h2>
+      <h3>This is a h3 Heading</h3>
+      <h4>This is a h4 Heading</h4>
+      <h5>This is a h5 Heading</h5>
+      <h6>This is a h6 Heading</h6>
+    </main>
+  </body>
+</html>
