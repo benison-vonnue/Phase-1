@@ -1,0 +1,207 @@
+<!-- ​Task 8 (45 min) - Combine Grid and Flexbox​
+​233.​ ​Build a portfolio project showcase section that uses Grid for the overall tile layout and Flexbox​
+​inside each tile for the image, tags, title, and description​
+​234.​ ​Featured project tiles span 2 columns and 2 rows using grid-column: span 2 and grid-row: span​ 2​
+​235.​ ​Non-featured tiles have an image-on-top layout (Flexbox column). Featured tiles have an​
+​image-on-left layout (Flexbox row).​
+​236.​ ​Add hover overlay content (project name + two links) using transform and transition on an​
+​overlay div​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+      *,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        pointer-events: none;
+      }
+
+      body {
+        font-family: "Bricolage Grotesque";
+        background-color: rgb(245, 245, 245);
+      }
+      .main {
+        margin-top: 1em;
+        margin-left: 10em;
+        margin-right: 10em;
+      }
+      .project {
+        margin-top: 2em;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2em;
+        margin-bottom: 4em;
+      }
+      .featured {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: 1/1;
+        background-color: white;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+      }
+      .featured > img {
+        position: absolute;
+        width: 100%;
+        opacity: 90%;
+      }
+
+      .featured-content {
+        opacity: 60%;
+        transform: translate(0, 75%);
+        height: 40%;
+        width: 100%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+        transition: 300ms;
+        padding: 1em;
+        border-radius: 20px;
+      }
+      .featured-content p {
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+      .featured-content a {
+        color: rgb(233, 233, 233);
+        text-decoration: none;
+        transition: 300ms;
+      }
+      .featured-content a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .featured:hover .featured-content {
+        opacity: 100%;
+        transform: translate(0, 0);
+      }
+      .non-featured {
+        aspect-ratio: 1/1;
+        background-color: white;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+      }
+      .non-featured > img {
+        position: absolute;
+        width: 100%;
+        opacity: 90%;
+      }
+
+      .non-featured-content {
+        opacity: 0%;
+        transform: translate(0, 100%);
+        height: 100%;
+        width: 100%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 1em;
+        z-index: 100;
+        transition: 300ms;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+      }
+
+      .non-featured a {
+        color: rgb(233, 233, 233);
+        text-decoration: none;
+        margin-top: 1em;
+        transition: 300ms;
+      }
+      .non-featured a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .non-featured:hover .non-featured-content {
+        opacity: 100%;
+        transform: translate(0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <h1>Project Showcase</h1>
+      <section class="project">
+        <div class="featured">
+          <img src="https://picsum.photos/id/237/600" alt="" />
+          <div class="featured-content">
+            <h1>Featured Heading 1</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+              maiores dignissimos magnam libero. Vero ipsum saepe fugit sapiente
+              dolor. Tenetur iste molestiae tempore atque natus doloribus
+              assumenda incidunt, similique alias.
+            </p>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+        <div class="featured">
+          <img src="https://picsum.photos/id/242/600" alt="" />
+          <div class="featured-content">
+            <h1>Featured Heading 2</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              minus dolore dolor odio omnis harum rerum, maiores fuga
+              repudiandae provident illum nam saepe neque quo, placeat ratione
+              vero soluta error.
+            </p>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+        <div class="non-featured">
+          <img src="https://picsum.photos/id/238/600" alt="" />
+          <div class="non-featured-content">
+            <h1>Non - Featured Heading 1</h1>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+        <div class="non-featured">
+          <img src="https://picsum.photos/id/239/600" alt="" />
+          <div class="non-featured-content">
+            <h1>Non - Featured Heading 2</h1>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+        <div class="non-featured">
+          <img src="https://picsum.photos/id/240/600" alt="" />
+          <div class="non-featured-content">
+            <h1>Non - Featured Heading 3</h1>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+        <div class="non-featured">
+          <img src="https://picsum.photos/id/241/600" alt="" />
+          <div class="non-featured-content">
+            <h1>Non - Featured Heading 4</h1>
+            <a href="">Check Out &RightArrow;</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
