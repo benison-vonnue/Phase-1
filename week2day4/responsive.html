@@ -1,0 +1,210 @@
+<!-- ​Task 1 (45 min) - Mobile-First Responsive System​
+237.​ ​Create responsive.html. Write all base styles for the narrowest screen first (320px). Add​
+​min-width breakpoints upward: 480px, 768px, 1024px, 1280px​
+​238.​ ​A navigation section: icon-only at 320px, text labels visible at 480px, horizontal at 768px, with a​
+​secondary nav visible at 1024px+​
+​239.​ ​A content grid: one column at 320px, two columns at 600px, three at 900px, four at 1280px -​
+​using the same container, only changing grid-template-columns​
+​240.​ ​Test every breakpoint in Chrome DevTools responsive mode​ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile-First Responsive System</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+      }
+      .header {
+        margin-top: 2em;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+      }
+      .nav-links .horizontal {
+        display: none;
+      }
+      .nav-logo {
+        display: none;
+      }
+      .nav-secondary {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        margin-top: 2em;
+        gap: 2em;
+        text-align: center;
+      }
+      @media (min-width: 480px) {
+        .nav-links .icon {
+          display: none;
+        }
+        .nav-links .horizontal {
+          display: inline;
+        }
+      }
+      @media (min-width: 600px) {
+        .content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 768px) {
+        .navigation {
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .navigation .nav-logo {
+          display: block;
+        }
+      }
+      @media (min-width: 900px) {
+        .content {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .navigation .nav-secondary {
+          display: flex;
+        }
+      }
+      @media (min-width: 1280px) {
+        .content {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <div class="nav-logo">
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-apple"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"
+              />
+              <path
+                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"
+              />
+            </svg>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li class="horizontal"><a href="">Home</a></li>
+          <li class="horizontal"><a href="">Contact</a></li>
+          <li class="horizontal"><a href="">About</a></li>
+          <li class="icon">
+            <a href=""
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-house"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="icon">
+            <a href=""
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="icon">
+            <a href=""
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-people"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav-secondary">
+          <li><a href="">Login</a></li>
+          <li><a href="">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="content">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempora
+        atque impedit voluptatum quam asperiores sed soluta vel delectus
+        nostrum, autem commodi, totam porro accusantium doloribus possimus
+        quibusdam, dicta laboriosam.
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam beatae
+        officiis consequuntur explicabo odio neque eos officia? Quae, sint nobis
+        nam nisi, quasi id quaerat optio commodi molestias ad mollitia.
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum doloribus
+        optio sapiente enim id mollitia in architecto recusandae, culpa qui quae
+        ratione, eveniet velit ut molestiae impedit. Eum, perferendis molestias!
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+        mollitia. Animi totam mollitia quis sapiente! Asperiores nobis
+        doloremque vero porro, repellat aperiam sit distinctio, in fugit magni
+        quaerat iusto possimus.
+      </div>
+      <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sed
+        nostrum impedit temporibus, ea magnam cum reprehenderit vitae at autem
+        accusantium ducimus, tempore blanditiis harum! Ratione iusto
+        necessitatibus perferendis et.
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+        repellendus temporibus consectetur sit nulla, ducimus nesciunt
+        assumenda. Deserunt sapiente officia reiciendis ratione autem, iusto eum
+        eligendi nihil minima, cumque laborum!
+      </div>
+    </main>
+  </body>
+</html>
