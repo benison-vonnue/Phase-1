@@ -1,0 +1,60 @@
+/* ​Task 8 (45 min) -   
+​266.​ ​Create print.css linked with media='print'​
+​267.​ ​Hide navigation, sidebars, buttons, ads, animations, and interactive elements​
+​268.​ ​Expand all collapsed accordion panels and show all tab panels​
+​269.​ ​Add content: ' (' attr(href) ')' using ::after on all external links so URLs are visible in print​
+​270.​ ​Use page-break-avoid on headings to prevent orphaned headers at the bottom of a page​
+​271.​ ​Test by printing the Services page to PDF - it should be clean and readable​ */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-areas:
+    "header header"
+    "main advertisement";
+}
+
+.main > header {
+  grid-area: header;
+}
+
+.main > article {
+  grid-area: main;
+}
+
+.main > aside {
+  grid-area: advertisement;
+}
+
+.accordion input {
+  display: none;
+}
+.accordion p {
+  max-height: 0;
+  overflow: hidden;
+  transition: 300ms;
+}
+.accordion input:checked + p {
+  max-height: 300px;
+}
+
+@media print {
+  body > header,
+  .main > aside {
+    display: none;
+  }
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main";
+  }
+  a::after {
+    content: "(" attr(href) ")";
+  }
+  section:has(> .accordion) {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .accordion p {
+    max-height: 300px;
+  }
+}
