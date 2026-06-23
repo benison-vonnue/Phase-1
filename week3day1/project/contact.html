@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Page</title>
+        <meta property="og:title" content="Lorem" />
+        <meta
+            property="og:description"
+            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ab temporibus repellendus sit saepe explicabo facere, voluptatum rem. Dolore tempore fugit illum similique deleniti totam? Architecto velit commodi natus ipsa."
+        />
+        <meta
+            property="og:image"
+            content="https://picsum.photos/id/34/400/300"
+        />
+        <meta property="og:site" content="https://vonnue.com" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li aria-current="page">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <button class="theme-btn" aria-pressed="false">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-moon-stars-fill"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"
+                                />
+                                <path
+                                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"
+                                />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="section">
+            <h1 class="text-center">Contact Us</h1>
+            <section class="contact-form">
+                <form action="/" method="get">
+                    <fieldset>
+                        <label for="name-input">Name</label>
+
+                        <input
+                            type="text"
+                            id="name-input"
+                            name="name-input"
+                            aria-label="name-input"
+                            placeholder="Name"
+                            required
+                        />
+
+                        <label for="email-input">Email</label>
+
+                        <input
+                            type="email"
+                            name="email-input"
+                            id="email-input"
+                            aria-label="email-input"
+                            placeholder="Email"
+                            required
+                        />
+
+                        <label for="phone-input">Phone</label>
+
+                        <input
+                            type="tel"
+                            name="phone-input"
+                            id="phone-input"
+                            aria-label="phone-input"
+                            placeholder="Phone"
+                            required
+                        />
+                        <label for="departament-input">Departament</label>
+                        <input
+                            type="text"
+                            name="departament-input"
+                            id="departament-input"
+                            list="departaments"
+                            aria-label="departament-input"
+                            placeholder="Departament"
+                            required
+                        />
+                        <datalist id="departaments">
+                            <option value="Engineering Dept."></option>
+                            <option value="Operations Dept."></option>
+                        </datalist>
+                        <label for="message-area">Message</label>
+                        <textarea
+                            name="message-area"
+                            id="message-area"
+                            aria-label="message-area"
+                            placeholder="Message"
+                            required
+                        ></textarea>
+                        <div class="subscribe-container">
+                            <span>
+                                <input
+                                    type="checkbox"
+                                    name="newsletter-input"
+                                    id="newsletter-input"
+                                />
+                            </span>
+                            <label for="newsletter-input"
+                                >Subscribe to our newsletter</label
+                            >
+                        </div>
+                        <div class="submit-btn-container">
+                            <button type="submit" class="submit-btn">
+                                Submit
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="section">
+                <h2 class="text-center">Our Location</h2>
+                <div class="map-card">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.54191373527!2d75.81081544999999!3d11.25556685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1780981241552!5m2!1sen!2sin"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Kozhikode"
+                    ></iframe>
+                    <address>
+                        <p>Calicut, Kerala</p>
+                    </address>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 Benison, Dev.</p>
+        </footer>
+        <script src="dark-mode.js"></script>
+    </body>
+</html>

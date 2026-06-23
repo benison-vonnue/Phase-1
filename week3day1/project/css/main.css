@@ -1,0 +1,12 @@
+/* ​Task 1 (30 min) - CSS Architecture Setup​
+​272.​ Create a /css folder structure: base.css (reset, variables, typography), layout.css (header,​
+f​ooter, grid structure), components.css (cards, buttons, forms, badges), pages.css (page-specific​
+​rules), and main.css that imports all four using @import​
+​273.​ ​Add a global CSS reset: *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }​
+​274.​ Move your design system custom properties and type scale into base.css
+​275.​ Commit: 'style: set up CSS architecture and design tokens'​ */
+
+@import url("base.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("pages.css");
