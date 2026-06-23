@@ -16,10 +16,13 @@ function changeTheme() {
     localStorage.setItem("theme", isDarkMode);
 }
 
-const btn = document.querySelector(".theme-btn");
-btn.addEventListener("click", onClick);
+const btns = document.querySelectorAll(".theme-btn");
 
-function onClick() {
+Array.from(btns).map((btn) => {
+    btn.addEventListener("click", onClick);
+});
+
+function onClick(e) {
     changeTheme();
-    btn.setAttribute("aria-pressed", !isDarkMode);
+    e.currentTarget.setAttribute("aria-pressed", !isDarkMode);
 }
