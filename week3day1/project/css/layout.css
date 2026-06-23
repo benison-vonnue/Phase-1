@@ -1,0 +1,76 @@
+header {
+    padding-top: 4rem;
+    position: sticky;
+    top: 15px;
+    z-index: 100;
+}
+
+header nav ul {
+    display: flex;
+    place-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+header nav ul li .theme-btn {
+    border: none;
+    background-color: transparent;
+}
+
+header nav ul li .theme-btn svg {
+    fill: #c35bff;
+}
+
+main {
+    margin-top: 3rem;
+}
+
+.section {
+    margin-top: 3rem;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (width <= 1024px) {
+    .section {
+        width: 768px;
+    }
+}
+
+@media (width <= 768px) {
+    .section {
+        width: 480px;
+    }
+}
+
+@media (width <= 480px) {
+    .section {
+        width: 300px;
+    }
+}
+
+@media (width < 375px) {
+    .section {
+        width: 250px;
+    }
+}
+
+.section > h2,
+.section > h1 {
+    text-align: center;
+}
+
+footer {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .section h1,
+    .section h2,
+    .section h3 {
+        animation: fade-in 300ms ease-in 1;
+    }
+}
