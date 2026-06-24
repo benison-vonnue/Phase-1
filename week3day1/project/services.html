@@ -110,8 +110,30 @@
         <main>
             <section class="section">
                 <h1>Our Services</h1>
-                <div class="features-grid margin-top-2">
-                    <article class="card">
+                <div class="search-input-container">
+                    <input
+                        type="text"
+                        id="search-input"
+                        name="search"
+                        placeholder="Search our services ..."
+                    />
+                    <button id="reset">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="#fff"
+                            class="bi bi-x-lg"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="features-grid margin-top-2" id="services-grid">
+                    <article class="card" id="article1">
                         <h2 class="font-2xl">MVP Development</h2>
                         <div class="card-content">
                             <div>
@@ -165,7 +187,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="card">
+                    <article class="card" id="article2">
                         <h2 class="font-2xl">
                             Custom Software Development Services
                         </h2>
@@ -213,7 +235,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="card">
+                    <article class="card" id="article3">
                         <h2 class="font-2xl">Product Design Services</h2>
                         <div class="card-content">
                             <div>
@@ -269,6 +291,7 @@
                         </div>
                     </article>
                 </div>
+                <div class="text-center none">No results found</div>
             </section>
             <section class="mt-2 section">
                 <h2>Comparison Table</h2>
@@ -380,5 +403,6 @@
         <script src="dark-mode.js"></script>
         <script src="navbar.js"></script>
         <script src="focus.js"></script>
+        <script src="search.js"></script>
     </body>
 </html>
