@@ -24,7 +24,7 @@ function gradeToLetter1(score) {
 }
 
 function gradeToLetter2(score) {
-    switch (score) {
+    switch (true) {
         case score >= 80:
             return "A";
         case score >= 60:
