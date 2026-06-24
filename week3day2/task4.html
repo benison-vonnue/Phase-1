@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Custom Errors & Global Handlers</title>
+        <style>
+            .error-overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+            .error-message {
+                font-size: 24px;
+                background-color: rgb(255, 51, 51);
+                border-radius: 50px;
+                height: 300px;
+                width: 600px;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="error-overlay">
+            <div class="error-message">
+                <span
+                    ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        style="display: flex; place-content: center"
+                    >
+                        <path
+                            d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+                        />
+                    </svg>
+                </span>
+                <p style="display: inline"></p>
+            </div>
+        </div>
+        <script src="task4.js"></script>
+    </body>
+</html>
