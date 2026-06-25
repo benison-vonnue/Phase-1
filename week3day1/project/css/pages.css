@@ -42,6 +42,19 @@
     gap: 2em;
 }
 
+#intersection-observer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.target {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
 @media (width <= 900px) {
     .team {
         grid-template-columns: repeat(2, 1fr);
@@ -51,12 +64,6 @@
 @media (width <= 768px) {
     .team {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .hero h1 {
-        animation: fade-in 300ms ease-in 1;
     }
 }
 
@@ -98,6 +105,32 @@ table > thead th {
 }
 
 /* Team Page */
+.scroll-indicator {
+    height: 10px;
+    background-color: #d791ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    width: 0%;
+}
+
+.scroll-up-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 10;
+    transition: 300ms;
+    opacity: 0;
+}
+
+.scroll-up-btn button {
+    border: none;
+    background-color: transparent;
+}
+
 .text-center {
     text-align: center;
 }

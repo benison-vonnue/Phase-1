@@ -347,20 +347,6 @@
     }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .about h1 {
-        animation: fade-in 300ms ease-in 1;
-    }
-
-    .timeline h2 {
-        animation: fade-in 300ms ease-in 1;
-    }
-
-    .timeline-card {
-        animation: fade-in 300ms ease-in 1;
-    }
-}
-
 .search-input-container {
     margin-top: 8px;
     display: flex;

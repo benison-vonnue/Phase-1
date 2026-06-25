@@ -148,9 +148,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .section h1,
-    .section h2,
-    .section h3 {
-        animation: fade-in 300ms ease-in 1;
+    .visible {
+        animation: fade-in 600ms ease-in 1;
     }
 }
