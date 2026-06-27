@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Registration Form - Every Input Type</title>
+        <style>
+            .error {
+                display: none;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Register Form</h1>
+            <form action="" method="get" id="form">
+                <fieldset>
+                    <legend>Personal Details :</legend>
+                    <div>
+                        <label for="name-input">Name *</label>
+                        <p>
+                            <input
+                                type="text"
+                                name="name-input"
+                                id="name-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="email-input">Email *</label>
+                        <p>
+                            <input
+                                type="email"
+                                name="email-input"
+                                id="email-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="phone-input">Phone *</label>
+                        <p>
+                            <input
+                                type="tel"
+                                name="phone-input"
+                                id="phone-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Account</legend>
+                    <div>
+                        <label for="username-input">Username *</label>
+                        <p>
+                            <input
+                                type="text"
+                                name="username-input"
+                                id="username-input"
+                                minlength="3"
+                                maxlength="20"
+                                pattern="[A-Za-z0-9_]{3,20}"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="password-input">Password *</label>
+                        <p>
+                            <input
+                                type="password"
+                                name="password-input"
+                                id="password-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="confirm-password-input"
+                            >Confirm Password *</label
+                        >
+                        <p>
+                            <input
+                                type="password"
+                                name="confirm-password-input"
+                                id="confirm-password-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <div>
+                        <p>Notifications</p>
+                        <p>
+                            <label for="notify-on">On</label>
+                            <input
+                                type="radio"
+                                name="notifications"
+                                id="notify-on"
+                                value="1"
+                                checked
+                            />
+                            <label for="notify-off">Off</label>
+                            <input
+                                type="radio"
+                                name="notifications"
+                                id="notify-off"
+                                value="0"
+                            />
+                        </p>
+                    </div>
+                    <div>
+                        <label for="skill-level-input">Skill Level *</label>
+                        <p>
+                            <input
+                                type="range"
+                                name="skill-level-input"
+                                id="skill-level-input"
+                                min="0"
+                                max="10"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="color-input">Profile Color *</label>
+                        <p>
+                            <input
+                                type="color"
+                                name="color-input"
+                                id="color-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="job-title-input">Job Title *</label>
+                        <p>
+                            <input
+                                list="job-titles"
+                                name="job-title-input"
+                                id="job-title-input"
+                                required
+                            />
+                            <span class="error">Invalid input</span>
+                        </p>
+                    </div>
+                    <datalist id="job-titles">
+                        <option value="Cobler">Cobler</option>
+                        <option value="Police">Police</option>
+                        <option value="Barber">Barber</option>
+                        <option value="Shopkeeper">Shopkeeper</option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Lawyer">Lawyer</option>
+                    </datalist>
+                </fieldset>
+
+                <!-- <div>
+                    <label for="number-input">Number Input</label>
+                    <p>
+                        <input
+                            type="number"
+                            name="number-input"
+                            id="number-input"
+                        />
+                    </p>
+                </div>
+
+                <div>
+                    <label for="url-input">Url Input</label>
+                    <p><input type="url" name="url-input" id="url-input" /></p>
+                </div>
+                <div>
+                    <label for="date-input">Date Input</label>
+                    <p>
+                        <input type="date" name="date-input" id="date-input" />
+                    </p>
+                </div>
+                <div>
+                    <label for="time-input">Time Input</label>
+                    <p>
+                        <input type="time" name="time-input" id="time-input" />
+                    </p>
+                </div>
+                <div>
+                    <label for="datetime-local-input"
+                        >Date Time Local Input</label
+                    >
+                    <p>
+                        <input
+                            type="datetime-local"
+                            name="datetime-local-input"
+                            id="datetime-local-input"
+                        />
+                    </p>
+                </div>
+                <div>
+                    <label for="month-input">Month Input</label>
+                    <p>
+                        <input
+                            type="month"
+                            name="month-input"
+                            id="month-input"
+                        />
+                    </p>
+                </div>
+                <div>
+                    <label for="week-input">Week Input</label>
+                    <p>
+                        <input type="week" name="week-input" id="week-input" />
+                    </p>
+                </div>
+                <div>
+                    <label for="checkbox-input">Checkbox Input</label>
+                    <p>
+                        <input
+                            type="checkbox"
+                            name="checkbox-input"
+                            id="checkbox-input"
+                        />
+                    </p>
+                </div>
+                <div>
+                    <label for="file-input">File Input</label>
+                    <p>
+                        <input type="file" name="file-input" id="file-input" />
+                    </p>
+                </div> -->
+                <button>Submit</button>
+            </form>
+        </main>
+        <script src="validator.js"></script>
+    </body>
+</html>
