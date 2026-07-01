@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart - Immutable + Observer</title>
+        <style>
+            *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            #cart-section {
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+            #cart-section div {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                gap: 6px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cart</h1>
+        <section id="cart-section"></section>
+        <script src="cart.js"></script>
+    </body>
+</html>
