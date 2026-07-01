@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Delegation - Dynamic To-Do List</title>
+        <style>
+            li {
+                display: flex;
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <input type="text" /><button data-function="add">Add</button>
+            <li>
+                <input type="checkbox" />
+
+                <span contenteditable="true">List 1</span>
+
+                <button data-function="remove">Remove</button>
+            </li>
+            <li>
+                <input type="checkbox" />
+
+                <span contenteditable="true">List 2</span>
+
+                <button data-function="remove">Remove</button>
+            </li>
+            <li>
+                <input type="checkbox" />
+
+                <span contenteditable="true">List 3</span>
+
+                <button data-function="remove">Remove</button>
+            </li>
+        </ul>
+        <script src="task2.js"></script>
+    </body>
+</html>
