@@ -1,0 +1,154 @@
+header {
+    padding-top: 4rem;
+    position: sticky;
+    top: 15px;
+    z-index: 100;
+}
+
+header .nav-large ul {
+    display: flex;
+    place-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+header .nav-large ul li {
+    display: flex;
+    place-content: center;
+}
+
+header .nav-large ul li .theme-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+}
+
+header .nav-large ul li .theme-btn svg {
+    fill: #c35bff;
+}
+
+.nav-mobile {
+    display: none;
+    padding: 0 36px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-mobile .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-mobile .btn-container .hamburger {
+    border: none;
+    background-color: #c35bff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.nav-mobile .btn-container .hamburger svg {
+    fill: white;
+    width: 28px;
+    height: 28px;
+}
+
+.nav-mobile .btn-container .hamburger main {
+    margin-top: 3rem;
+}
+
+.nav-mobile .nav-container {
+    background-color: #fff;
+    color: #c35bff;
+    height: 0px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 300ms;
+}
+
+.open {
+    height: 500px !important;
+}
+
+.nav-mobile .nav-container ul li {
+    margin: 36px;
+    font-size: 20px;
+    padding-bottom: 16px;
+}
+
+.nav-mobile .nav-container ul li .theme-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-mobile .nav-container ul li .theme-btn svg {
+    fill: #c35bff;
+    width: 24px;
+    height: 24px;
+}
+
+.section {
+    margin-top: 3rem;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (width <= 1024px) {
+    .section {
+        width: 768px;
+    }
+}
+
+@media (width <= 768px) {
+    .section {
+        width: 480px;
+    }
+}
+
+@media (width <= 480px) {
+    .section {
+        width: 300px;
+    }
+}
+
+@media (width < 375px) {
+    .section {
+        width: 250px;
+    }
+}
+
+@media (width < 450px) {
+    .nav-large {
+        display: none;
+    }
+    .nav-mobile {
+        display: flex;
+    }
+}
+
+.section > h2,
+.section > h1 {
+    text-align: center;
+}
+
+footer {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .visible {
+        animation: fade-in 600ms ease-in 1;
+    }
+}

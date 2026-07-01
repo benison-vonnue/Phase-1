@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: var(--color-secondary-400);
+    text-decoration: none;
+    transition: 150ms;
+}
+
+a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    border: 1px solid var(--color-secondary-400);
+}
+
+:root {
+    --color-primary: #0c0c0c;
+    --color-secondary: #a64ddb;
+    --color-secondary-400: #c35bff;
+    --color-bg: #f5f5f5;
+    --color-accent: #a5a5a5;
+    --font-body: "Bricolage Grotesque";
+}
+
+html[data-theme="dark"] {
+    --color-bg: #0c0c0c;
+    --color-primary: #d6d6d6;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+}
+
+.mt-8 {
+    margin-top: 8em;
+}
+
+.mt-6 {
+    margin-top: 6em;
+}
+
+.mt-4 {
+    margin-top: 4em;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.mt-1-2 {
+    margin-top: 0.5em;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
