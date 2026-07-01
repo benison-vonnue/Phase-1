@@ -1,0 +1,64 @@
+<!-- ​Task 1 (40 min) - Bubbling, Capturing & stopPropagation​
+​329.​ Three-level nested div. Add click listeners in both bubble and capture phases on all three​
+​levels. Log phase name and element.​
+​330.​ ​Demonstrate stopPropagation() - click the child, outer listeners should not fire​​ 
+331.​ ​Demonstrate stopImmediatePropagation() - two listeners on same element, stop second​
+​332.​ Show preventDefault() on a form submit and on an anchor click​ -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bubbling, Capturing & stopPropagation</title>
+        <style>
+            .top-level {
+                margin: 40px;
+                border: red solid 1px;
+            }
+            .middle-level {
+                margin: 40px;
+                border: blue solid 1px;
+            }
+            .bottom-level {
+                margin: 40px;
+                border: green solid 1px;
+                height: 20px;
+            }
+            button {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="section1">
+            <div class="top-level">
+                <div class="middle-level">
+                    <div class="bottom-level"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="top-level">
+                <div class="middle-level">
+                    <div class="bottom-level"></div>
+                    <div class="bottom-level"></div>
+                    <div class="bottom-level"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="top-level">
+                <div class="middle-level">
+                    <div class="bottom-level"></div>
+                </div>
+            </div>
+        </section>
+        <form action="">
+            <input type="text" name="input1" id="input1" />
+            <button type="submit">Submit</button>
+            <a href="">Test</a>
+        </form>
+    </body>
+    <script src="task1.js"></script>
+</html>
